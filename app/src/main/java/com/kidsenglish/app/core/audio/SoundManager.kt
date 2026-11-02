@@ -1,111 +1,76 @@
 package com.kidsenglish.app.core.audio
 
 import android.content.Context
-import android.media.AudioAttributes
-import android.media.MediaPlayer
-import android.media.SoundPool
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
 
 /**
- * Simple sound & music manager for the Kids English app.
- * Uses MediaPlayer for background music and SoundPool for short SFX.
- *
- * Replace the raw resource IDs with real audio files later:
- *  - res/raw/bg_music_happy.mp3
- *  - res/raw/sfx_unlock.mp3
- *  - res/raw/sfx_star.mp3
- *  - res/raw/sfx_correct.mp3
- *  - res/raw/sfx_tap.mp3
+ * Backwards-compatible facade that delegates directly to the centralized AudioManager and SoundEffectManager.
  */
-class SoundManager(private val context: Context) {
+class SoundManager(context: Context) {
 
-    private var backgroundPlayer: MediaPlayer? = null
-    private var soundPool: SoundPool? = null
+    private val audioManager = AudioManager(context)
 
-    // Sound IDs (loaded later when real files exist)
-    private var unlockSoundId: Int = 0
-    private var starSoundId: Int = 0
-    private var correctSoundId: Int = 0
-    private var tapSoundId: Int = 0
+    var isMusicEnabled: Boolean
+        get() = audioManager.settings.value.isMusicEnabled
+        set(value) {
+            audioManager.updateSettings(audioManager.settings.value.copy(isMusicEnabled = value))
+        }
 
-    var isMusicEnabled: Boolean = true
-    var isSfxEnabled: Boolean = true
-    var musicVolume: Float = 0.4f
-    var sfxVolume: Float = 0.8f
+    var isSfxEnabled: Boolean
+        get() = audioManager.settings.value.isSfxEnabled
+        set(value) {
+            audioManager.updateSettings(audioManager.settings.value.copy(isSfxEnabled = value))
+        }
 
-    init {
-        val audioAttributes = AudioAttributes.Builder()
-            .setUsage(AudioAttributes.USAGE_GAME)
-            .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-            .build()
+    var musicVolume: Float
+        get() = audioManager.settings.value.musicVolume
+        set(value) {
+            audioManager.updateSettings(audioManager.settings.value.copy(musicVolume = value))
+        }
 
-        soundPool = SoundPool.Builder()
-            .setMaxStreams(6)
-            .setAudioAttributes(audioAttributes)
-            .build()
-
-        // TODO: Load real sounds when assets are added
-        // unlockSoundId = soundPool?.load(context, R.raw.sfx_unlock, 1) ?: 0
-        // starSoundId   = soundPool?.load(context, R.raw.sfx_star, 1) ?: 0
-        // etc.
-    }
+    var sfxVolume: Float
+        get() = audioManager.settings.value.sfxVolume
+        set(value) {
+            audioManager.updateSettings(audioManager.settings.value.copy(sfxVolume = value))
+        }
 
     fun playBackgroundMusic(resId: Int = 0) {
-        if (!isMusicEnabled) return
-        stopBackgroundMusic()
-
-        // Placeholder – replace with real resource
-        // backgroundPlayer = MediaPlayer.create(context, R.raw.bg_music_happy).apply {
-        //     isLooping = true
-        //     setVolume(musicVolume, musicVolume)
-        //     start()
-        // }
+        audioManager.startMusic()
     }
 
     fun stopBackgroundMusic() {
-        backgroundPlayer?.apply {
-            if (isPlaying) stop()
-            release()
-        }
-        backgroundPlayer = null
+        audioManager.pauseMusic()
     }
 
     fun lowerMusicForVoice() {
-        backgroundPlayer?.setVolume(musicVolume * 0.25f, musicVolume * 0.25f)
+        audioManager.duckForVoice()
     }
 
     fun restoreMusicVolume() {
-        backgroundPlayer?.setVolume(musicVolume, musicVolume)
+        audioManager.restoreAfterVoice()
     }
 
     fun playUnlockSound() {
-        if (!isSfxEnabled) return
-        // soundPool?.play(unlockSoundId, sfxVolume, sfxVolume, 1, 0, 1f)
-        // For now just a log / future hook
+        audioManager.playSfx(AudioEffect.LEVEL_UNLOCK)
     }
 
     fun playStarSound() {
-        if (!isSfxEnabled) return
-        // soundPool?.play(starSoundId, sfxVolume, sfxVolume, 1, 0, 1f)
+        audioManager.playSfx(AudioEffect.STAR)
     }
 
     fun playCorrectSound() {
-        if (!isSfxEnabled) return
-        // soundPool?.play(correctSoundId, sfxVolume, sfxVolume, 1, 0, 1f)
+        audioManager.playSfx(AudioEffect.CORRECT)
     }
 
     fun playTapSound() {
-        if (!isSfxEnabled) return
-        // soundPool?.play(tapSoundId, sfxVolume * 0.6f, sfxVolume * 0.6f, 1, 0, 1f)
+        audioManager.playSfx(AudioEffect.TAP)
     }
 
     fun release() {
-        stopBackgroundMusic()
-        soundPool?.release()
-        soundPool = null
+        audioManager.release()
     }
 }
 

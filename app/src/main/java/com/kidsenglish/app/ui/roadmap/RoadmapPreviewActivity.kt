@@ -18,11 +18,9 @@ class RoadmapPreviewActivity : ComponentActivity() {
         setContent {
             KidsEnglishTheme {
                 Surface(modifier = Modifier.fillMaxSize()) {
-                    RoadmapScreen(
-                        roadmapData = createSampleRoadmapData(),
-                        onNodeClick = { node ->
-                            // TODO: Navigate to LessonScreen(node.id)
-                            println("Clicked lesson: ${node.title} (${node.id})")
+                    MeningYolimScreen(
+                        onLevelClick = { level ->
+                            println("Clicked level: $level")
                         }
                     )
                 }

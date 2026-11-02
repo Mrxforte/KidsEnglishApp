@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kids English</string>
+
+    <!-- General Navigation & Actions -->
+    <string name="action_back">Назад</string>
+    <string name="action_continue">Продолжить</string>
+    <string name="action_next">Далее</string>
+    <string name="action_try_again">Попробовать снова</string>
+    <string name="action_finish">Вернуться на карту</string>
+    <string name="action_listen">Слушать</string>
+    <string name="action_slow_listen">Медленно</string>
+    <string name="action_settings">Настройки</string>
+    <string name="action_close">Закрыть</string>
+    <string name="action_reset">Сбросить</string>
+
+    <!-- Roadmap & Progression -->
+    <string name="roadmap_title">Мой путь</string>
+    <string name="roadmap_banner">⭐ Путешествие в мир знаний! ⭐</string>
+    <string name="roadmap_streak_format">%d дн.</string>
+    <string name="roadmap_level_prefix">Уровень %d</string>
+    <string name="roadmap_locked_label">(Закрыто)</string>
+    <string name="roadmap_completed_label">Пройдено</string>
+    <string name="roadmap_current_label">В процессе</string>
+    <string name="full_roadmap_title">Азбучное путешествие</string>
+
+    <!-- Lesson Sections -->
+    <string name="section_welcome">Добро пожаловать</string>
+    <string name="section_discover">Узнаём</string>
+    <string name="section_understand">Понимаем</string>
+    <string name="section_practice">Практика</string>
+    <string name="section_mini_game">Мини-игра</string>
+    <string name="section_review">Повторение</string>
+    <string name="section_completion">Отлично!</string>
+
+    <!-- Lesson Feedback & Completion -->
+    <string name="feedback_correct">Отлично! Верно! 🎉</string>
+    <string name="feedback_incorrect">Почти получилось, попробуй ещё! 💪</string>
+    <string name="completion_congrats">Ура! Урок успешно завершён!</string>
+    <string name="completion_stars_earned">Полученные звёзды</string>
+    <string name="completion_score_format">Правильно: %1$d из %2$d</string>
+    <string name="completion_high_five">Дай пять! Ты молодец! 🌟</string>
+
+    <!-- Audio & Voice Settings -->
+    <string name="settings_title">Звук и настройки</string>
+    <string name="settings_music_label">Фоновая музыка</string>
+    <string name="settings_sfx_label">Звуковые эффекты</string>
+    <string name="settings_voice_label">Голос произношения</string>
+    <string name="settings_music_volume">Громкость музыки</string>
+    <string name="settings_voice_speed">Скорость речи (Обычная / Медленная)</string>
+    <string name="settings_reset_progress">Сбросить прогресс</string>
+    <string name="settings_reset_confirm">Вы действительно хотите сбросить прогресс?</string>
+
+    <!-- Character & Mascot -->
+    <string name="mascot_name">Лео</string>
+    <string name="mascot_hello">Привет, юный друг! 👋</string>
+    <string name="mascot_praise">Молодец! Всё правильно!</string>
+    <string name="mascot_encourage">Не сдавайся, попробуй ещё разок!</string>
+    <string name="mascot_listen">Послушай внимательно, как звучит слово!</string>
+</resources>

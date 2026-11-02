@@ -1,4 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Kids English</string>
+
+    <!-- General Navigation & Actions -->
+    <string name="action_back">Back</string>
+    <string name="action_continue">Continue</string>
+    <string name="action_next">Next</string>
+    <string name="action_try_again">Try Again</string>
+    <string name="action_finish">Return to Map</string>
+    <string name="action_listen">Listen</string>
+    <string name="action_slow_listen">Listen Slow</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_close">Close</string>
+    <string name="action_reset">Reset</string>
+
+    <!-- Roadmap & Progression -->
+    <string name="roadmap_title">My Path</string>
+    <string name="roadmap_banner">⭐ Journey into the World of Knowledge! ⭐</string>
+    <string name="roadmap_streak_format">%d days</string>
+    <string name="roadmap_level_prefix">Level %d</string>
+    <string name="roadmap_locked_label">(Locked)</string>
+    <string name="roadmap_completed_label">Completed</string>
+    <string name="roadmap_current_label">In Progress</string>
+    <string name="full_roadmap_title">Alphabet Journey</string>
+
+    <!-- Lesson Sections -->
+    <string name="section_welcome">Welcome</string>
+    <string name="section_discover">Discover</string>
+    <string name="section_understand">Understand</string>
+    <string name="section_practice">Practice</string>
+    <string name="section_mini_game">Mini Game</string>
+    <string name="section_review">Review</string>
+    <string name="section_completion">Well Done!</string>
+
+    <!-- Lesson Feedback & Completion -->
+    <string name="feedback_correct">Excellent! 🎉</string>
+    <string name="feedback_incorrect">Not quite, try again! 💪</string>
+    <string name="completion_congrats">Hooray! Lesson Completed!</string>
+    <string name="completion_stars_earned">Stars Earned</string>
+    <string name="completion_score_format">Correct: %1$d / %2$d</string>
+    <string name="completion_high_five">High five! You did great! 🌟</string>
+
+    <!-- Audio & Voice Settings -->
+    <string name="settings_title">Audio &amp; Settings</string>
+    <string name="settings_music_label">Background Music</string>
+    <string name="settings_sfx_label">Sound Effects</string>
+    <string name="settings_voice_label">Voice Pronunciation</string>
+    <string name="settings_music_volume">Music Volume</string>
+    <string name="settings_voice_speed">Voice Speed (Normal / Slow)</string>
+    <string name="settings_reset_progress">Reset Learning Progress</string>
+    <string name="settings_reset_confirm">Are you sure you want to reset all stars?</string>
+
+    <!-- Character & Mascot -->
+    <string name="mascot_name">Leo</string>
+    <string name="mascot_hello">Hello little learner! 👋</string>
+    <string name="mascot_praise">Awesome job! You got it!</string>
+    <string name="mascot_encourage">Don’t give up, try one more time!</string>
+    <string name="mascot_listen">Listen closely to the sound!</string>
 </resources>

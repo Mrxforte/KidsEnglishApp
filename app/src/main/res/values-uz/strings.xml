@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kids English</string>
+
+    <!-- General Navigation & Actions -->
+    <string name="action_back">Orqaga</string>
+    <string name="action_continue">Davom etish</string>
+    <string name="action_next">Keyingisi</string>
+    <string name="action_try_again">Qayta urinish</string>
+    <string name="action_finish">Yo‘lga qaytish</string>
+    <string name="action_listen">Tinglash</string>
+    <string name="action_slow_listen">Sekin tinglash</string>
+    <string name="action_settings">Sozlamalar</string>
+    <string name="action_close">Yopish</string>
+    <string name="action_reset">Tozalash</string>
+
+    <!-- Roadmap & Progression -->
+    <string name="roadmap_title">Mening yo‘lim</string>
+    <string name="roadmap_banner">⭐ Bilim olamida oldinga sayohat! ⭐</string>
+    <string name="roadmap_streak_format">%d kun</string>
+    <string name="roadmap_level_prefix">%d-bosqich</string>
+    <string name="roadmap_locked_label">(Yopiq)</string>
+    <string name="roadmap_completed_label">Tugatildi</string>
+    <string name="roadmap_current_label">Jarayonda</string>
+    <string name="full_roadmap_title">Alifbo Sayohati</string>
+
+    <!-- Lesson Sections -->
+    <string name="section_welcome">Xush kelibsiz</string>
+    <string name="section_discover">Kashf qilish</string>
+    <string name="section_understand">Tushunish</string>
+    <string name="section_practice">Mashq qilish</string>
+    <string name="section_mini_game">Kichik O‘yin</string>
+    <string name="section_review">Takrorlash</string>
+    <string name="section_completion">Barakalla!</string>
+
+    <!-- Lesson Feedback & Completion -->
+    <string name="feedback_correct">Ajoyib! To‘g‘ri topdingiz! 🎉</string>
+    <string name="feedback_incorrect">Deyarli, yana bir bor urinib ko‘ring! 💪</string>
+    <string name="completion_congrats">Uraa! Dars muvaffaqiyatli yakunlandi!</string>
+    <string name="completion_stars_earned">To‘plangan yulduzlar</string>
+    <string name="completion_score_format">To‘g‘ri javoblar: %1$d / %2$d</string>
+    <string name="completion_high_five">Besh tashla! Siz juda aqllisiz! 🌟</string>
+
+    <!-- Audio & Voice Settings -->
+    <string name="settings_title">Ovoz va Sozlamalar</string>
+    <string name="settings_music_label">Fon musiqasi</string>
+    <string name="settings_sfx_label">Ovoz effektlari</string>
+    <string name="settings_voice_label">Talaffuz ovozi</string>
+    <string name="settings_music_volume">Musiqa balandligi</string>
+    <string name="settings_voice_speed">Ovoz tezligi (Oddiy / Sekin)</string>
+    <string name="settings_reset_progress">Yutuqlarni qayta boshlash</string>
+    <string name="settings_reset_confirm">Barcha to‘plangan yulduzlarni qayta boshlashni xohlaysizmi?</string>
+
+    <!-- Character & Mascot -->
+    <string name="mascot_name">Leo</string>
+    <string name="mascot_hello">Salom, kichkintoy do‘stim! 👋</string>
+    <string name="mascot_praise">Ofarin! Barakalla!</string>
+    <string name="mascot_encourage">Tushkunlikka tushma, yana bir marta urinib ko‘r!</string>
+    <string name="mascot_listen">Talaffuzni diqqat bilan eshit!</string>
+</resources>

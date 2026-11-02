@@ -1,0 +1,6 @@
+{
+  "name": "Kids English",
+  "description": "An interactive English learning app for kids with roadmap, lessons, and audio.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -710,8 +710,122 @@ private fun BigContinueButton(
 }
 
 // ────────────────────────────────────────────────
-// Sample Lesson — Letter C
+// Sample Lessons — Levels 1..4
 // ────────────────────────────────────────────────
+fun createSampleLessonA(): Lesson {
+    return Lesson(
+        id = "abc_a",
+        topicId = "funny_abc",
+        lessonNumber = 1,
+        title = "A — Apple",
+        titleUz = "A — Olma",
+        descriptionUz = "Bugun biz A harfini va \"Apple\" so‘zini o‘rganamiz. Tayyormisiz?",
+        emoji = "🍎",
+        vocabulary = listOf(
+            VocabularyItem(
+                id = "apple",
+                english = "Apple",
+                uzbek = "Olma",
+                emoji = "🍎",
+                exampleSentence = "This is a red apple.",
+                exampleSentenceUz = "Bu qizil olma."
+            ),
+            VocabularyItem(
+                id = "ant",
+                english = "Ant",
+                uzbek = "Chumoli",
+                emoji = "🐜"
+            )
+        ),
+        examples = listOf(
+            Example("Apple", "Olma", "🍎"),
+            Example("A red apple", "Qizil olma", "🍎"),
+            Example("I like apples", "Men olmalarni yaxshi ko‘raman", "😋")
+        ),
+        exercises = listOf(
+            Exercise(
+                id = "ex_a1",
+                type = ExerciseType.TAP_PICTURE,
+                questionUz = "Qaysi biri \"Apple\"?",
+                correctAnswer = "apple",
+                options = listOf(
+                    ExerciseOption("1", "Apple", "🍎", isCorrect = true),
+                    ExerciseOption("2", "Ball", "🏐", isCorrect = false),
+                    ExerciseOption("3", "Cat", "🐱", isCorrect = false)
+                )
+            ),
+            Exercise(
+                id = "ex_a2",
+                type = ExerciseType.MULTIPLE_CHOICE,
+                questionUz = "\"Olma\" inglizcha qanday?",
+                correctAnswer = "Apple",
+                options = listOf(
+                    ExerciseOption("a", "Cat", isCorrect = false),
+                    ExerciseOption("b", "Apple", isCorrect = true),
+                    ExerciseOption("c", "Dog", isCorrect = false)
+                )
+            )
+        )
+    )
+}
+
+fun createSampleLessonB(): Lesson {
+    return Lesson(
+        id = "abc_b",
+        topicId = "funny_abc",
+        lessonNumber = 2,
+        title = "B — Ball",
+        titleUz = "B — To‘p",
+        descriptionUz = "Bugun biz B harfini va \"Ball\" so‘zini o‘rganamiz!",
+        emoji = "🏐",
+        vocabulary = listOf(
+            VocabularyItem(
+                id = "ball",
+                english = "Ball",
+                uzbek = "To‘p",
+                emoji = "🏐",
+                exampleSentence = "I have a big ball.",
+                exampleSentenceUz = "Menda katta to‘p bor."
+            ),
+            VocabularyItem(
+                id = "bear",
+                english = "Bear",
+                uzbek = "Ayiq",
+                emoji = "🐻"
+            )
+        ),
+        examples = listOf(
+            Example("Ball", "To‘p", "🏐"),
+            Example("A big ball", "Katta to‘p", "🏐"),
+            Example("Play with ball", "To‘p bilan o‘ynash", "⚽")
+        ),
+        exercises = listOf(
+            Exercise(
+                id = "ex_b1",
+                type = ExerciseType.TAP_PICTURE,
+                questionUz = "Qaysi biri \"Ball\"?",
+                correctAnswer = "ball",
+                options = listOf(
+                    ExerciseOption("1", "Dog", "🐶", isCorrect = false),
+                    ExerciseOption("2", "Ball", "🏐", isCorrect = true),
+                    ExerciseOption("3", "Apple", "🍎", isCorrect = false)
+                )
+            ),
+            Exercise(
+                id = "ex_b2",
+                type = ExerciseType.MULTIPLE_CHOICE,
+                questionUz = "\"To‘p\" inglizcha nima deyiladi?",
+                correctAnswer = "Ball",
+                options = listOf(
+                    ExerciseOption("a", "Ball", isCorrect = true),
+                    ExerciseOption("b", "Cat", isCorrect = false),
+                    ExerciseOption("c", "Bear", isCorrect = false)
+                )
+            )
+        )
+    )
+}
+
 fun createSampleLessonC(): Lesson {
     return Lesson(
         id = "abc_c",
@@ -767,6 +881,73 @@ fun createSampleLessonC(): Lesson {
             )
         )
     )
+}
+
+fun createSampleLessonD(): Lesson {
+    return Lesson(
+        id = "abc_d",
+        topicId = "funny_abc",
+        lessonNumber = 4,
+        title = "D — Dog",
+        titleUz = "D — Kuchukcha",
+        descriptionUz = "Bugun biz D harfini va \"Dog\" so‘zini o‘rganamiz!",
+        emoji = "🐶",
+        vocabulary = listOf(
+            VocabularyItem(
+                id = "dog",
+                english = "Dog",
+                uzbek = "Kuchukcha",
+                emoji = "🐶",
+                exampleSentence = "The dog runs fast.",
+                exampleSentenceUz = "Kuchukcha tez yuguradi."
+            ),
+            VocabularyItem(
+                id = "duck",
+                english = "Duck",
+                uzbek = "O‘rdak",
+                emoji = "🦆"
+            )
+        ),
+        examples = listOf(
+            Example("Dog", "Kuchuk", "🐶"),
+            Example("A cute dog", "Yoqimli kuchukcha", "🐶"),
+            Example("Good dog!", "Aqlli kuchuk!", "✨")
+        ),
+        exercises = listOf(
+            Exercise(
+                id = "ex_d1",
+                type = ExerciseType.TAP_PICTURE,
+                questionUz = "Qaysi biri \"Dog\"?",
+                correctAnswer = "dog",
+                options = listOf(
+                    ExerciseOption("1", "Cat", "🐱", isCorrect = false),
+                    ExerciseOption("2", "Duck", "🦆", isCorrect = false),
+                    ExerciseOption("3", "Dog", "🐶", isCorrect = true)
+                )
+            ),
+            Exercise(
+                id = "ex_d2",
+                type = ExerciseType.MULTIPLE_CHOICE,
+                questionUz = "\"Kuchukcha\" inglizcha nima?",
+                correctAnswer = "Dog",
+                options = listOf(
+                    ExerciseOption("a", "Dog", isCorrect = true),
+                    ExerciseOption("b", "Duck", isCorrect = false),
+                    ExerciseOption("c", "Car", isCorrect = false)
+                )
+            )
+        )
+    )
+}
+
+fun getLessonForLevel(level: Int): Lesson {
+    return when (level) {
+        1 -> createSampleLessonA()
+        2 -> createSampleLessonB()
+        3 -> createSampleLessonC()
+        4 -> createSampleLessonD()
+        else -> createSampleLessonC()
+    }
 }
 
 @Preview(showBackground = true, widthDp = 400, heightDp = 800)
