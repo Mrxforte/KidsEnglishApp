@@ -1,0 +1,39 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="160dp"
+    android:height="120dp"
+    android:viewportWidth="160"
+    android:viewportHeight="120">
+    <!-- Deep Cosmic Indigo Backdrop -->
+    <path
+        android:fillColor="#283593"
+        android:pathData="M0,0h160v120h-160z" />
+    <!-- Glowing Stars -->
+    <path
+        android:fillColor="#FFD54F"
+        android:pathData="M22,24 m-3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0 M134,20 m-3.5,0 a3.5,3.5 0 1,0 7,0 a3.5,3.5 0 1,0 -7,0 M30,86 m-2.5,0 a2.5,2.5 0 1,0 5,0 a2.5,2.5 0 1,0 -5,0 M138,84 m-3,0 a3,3 0 1,0 6,0 a3.5,3.5 0 1,0 -6,0" />
+    <!-- Ringed Planet on Left -->
+    <path
+        android:fillColor="#AB47BC"
+        android:pathData="M34,54 m-16,0 a16,16 0 1,0 32,0 a16,16 0 1,0 -32,0" />
+    <path
+        android:strokeColor="#FFCA28"
+        android:strokeWidth="4"
+        android:pathData="M12,58 Q34,68 56,50" />
+    <!-- Cartoon Rocket Ship on Right -->
+    <path
+        android:fillColor="#FF7043"
+        android:pathData="M96,86 L108,58 L120,86 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M96,42 Q108,16 120,42 L120,78 L96,78 Z" />
+    <path
+        android:fillColor="#E53935"
+        android:pathData="M96,42 Q108,18 120,42 Z" />
+    <path
+        android:fillColor="#29B6F6"
+        android:pathData="M108,54 m-7,0 a7,7 0 1,0 14,0 a7,7 0 1,0 -14,0" />
+    <!-- Rocket Flame -->
+    <path
+        android:fillColor="#FFCA28"
+        android:pathData="M101,78 L108,104 L115,78 Z" />
+</vector>

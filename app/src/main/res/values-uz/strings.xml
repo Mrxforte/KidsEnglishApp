@@ -1,60 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Global Application Identity -->
     <string name="app_name">Kids English</string>
 
-    <!-- General Navigation & Actions -->
-    <string name="action_back">Orqaga</string>
-    <string name="action_continue">Davom etish</string>
-    <string name="action_next">Keyingisi</string>
-    <string name="action_try_again">Qayta urinish</string>
-    <string name="action_finish">Yo‘lga qaytish</string>
-    <string name="action_listen">Tinglash</string>
-    <string name="action_slow_listen">Sekin tinglash</string>
-    <string name="action_settings">Sozlamalar</string>
-    <string name="action_close">Yopish</string>
-    <string name="action_reset">Tozalash</string>
+    <!-- Splash Screen: Main brand welcome title -->
+    <string name="splash_welcome">Kids English</string>
 
-    <!-- Roadmap & Progression -->
-    <string name="roadmap_title">Mening yo‘lim</string>
-    <string name="roadmap_banner">⭐ Bilim olamida oldinga sayohat! ⭐</string>
-    <string name="roadmap_streak_format">%d kun</string>
-    <string name="roadmap_level_prefix">%d-bosqich</string>
-    <string name="roadmap_locked_label">(Yopiq)</string>
-    <string name="roadmap_completed_label">Tugatildi</string>
-    <string name="roadmap_current_label">Jarayonda</string>
-    <string name="full_roadmap_title">Alifbo Sayohati</string>
+    <!-- Splash Screen: Friendly educational subtitle -->
+    <string name="splash_subtitle">O‘ynab ingliz tilini o‘rganamiz!</string>
 
-    <!-- Lesson Sections -->
-    <string name="section_welcome">Xush kelibsiz</string>
-    <string name="section_discover">Kashf qilish</string>
-    <string name="section_understand">Tushunish</string>
-    <string name="section_practice">Mashq qilish</string>
-    <string name="section_mini_game">Kichik O‘yin</string>
-    <string name="section_review">Takrorlash</string>
-    <string name="section_completion">Barakalla!</string>
+    <!-- Splash Screen: Top pill badge text -->
+    <string name="splash_badge">✨ Kichkintoylar uchun</string>
 
-    <!-- Lesson Feedback & Completion -->
-    <string name="feedback_correct">Ajoyib! To‘g‘ri topdingiz! 🎉</string>
-    <string name="feedback_incorrect">Deyarli, yana bir bor urinib ko‘ring! 💪</string>
-    <string name="completion_congrats">Uraa! Dars muvaffaqiyatli yakunlandi!</string>
-    <string name="completion_stars_earned">To‘plangan yulduzlar</string>
-    <string name="completion_score_format">To‘g‘ri javoblar: %1$d / %2$d</string>
-    <string name="completion_high_five">Besh tashla! Siz juda aqllisiz! 🌟</string>
+    <!-- Splash Screen: Loading status indicator label -->
+    <string name="splash_loading">Sehrli olam yuklanmoqda…</string>
 
-    <!-- Audio & Voice Settings -->
-    <string name="settings_title">Ovoz va Sozlamalar</string>
-    <string name="settings_music_label">Fon musiqasi</string>
-    <string name="settings_sfx_label">Ovoz effektlari</string>
-    <string name="settings_voice_label">Talaffuz ovozi</string>
-    <string name="settings_music_volume">Musiqa balandligi</string>
-    <string name="settings_voice_speed">Ovoz tezligi (Oddiy / Sekin)</string>
-    <string name="settings_reset_progress">Yutuqlarni qayta boshlash</string>
-    <string name="settings_reset_confirm">Barcha to‘plangan yulduzlarni qayta boshlashni xohlaysizmi?</string>
+    <!-- Splash Screen: Ready status indicator label -->
+    <string name="splash_ready">Boshlashga tayyor!</string>
 
-    <!-- Character & Mascot -->
-    <string name="mascot_name">Leo</string>
-    <string name="mascot_hello">Salom, kichkintoy do‘stim! 👋</string>
-    <string name="mascot_praise">Ofarin! Barakalla!</string>
-    <string name="mascot_encourage">Tushkunlikka tushma, yana bir marta urinib ko‘r!</string>
-    <string name="mascot_listen">Talaffuzni diqqat bilan eshit!</string>
+    <!-- Splash Screen: Accessibility content descriptions -->
+    <string name="cd_splash_mascot">Kids English do‘stona to‘tiqush maskoti</string>
+    <string name="cd_splash_logo">Kids English ilova logotipi</string>
+
+    <!-- Horizontal Roadmap HUD -->
+    <string name="roadmap_stickers_today">Bugungi stikerlar:</string>
+    <string name="roadmap_stickers_count">%1$d/%2$d</string>
+    <string name="roadmap_words_learned">O‘rganilgan so‘zlar</string>
+    <string name="roadmap_free_badge">BEPUL</string>
+    <string name="roadmap_all_topics_badge">Barcha bo‘limlar</string>
+    <string name="roadmap_adventure_badge">O‘yinlar xaritasi</string>
+    <string name="roadmap_locked_toast">Bu mashq tez orada ochiladi!</string>
+    <string name="roadmap_sticker_earned">+1 Stiker qo‘shildi! Barakalla!</string>
+
+    <!-- Roadmap HUD Accessibility -->
+    <string name="cd_roadmap_grid_toggle">Bo‘limlar jadvalini ochish</string>
+    <string name="cd_roadmap_settings">Sozlamalarni ochish</string>
+    <string name="cd_roadmap_stickers">Bugungi stikerlar mukofoti</string>
+    <string name="cd_roadmap_locked">Yopiq mashq</string>
+
+    <!-- 18 Topic Categories (3x6 Horizontal Grid Template) -->
+    <string name="topic_abc">ABC Harflar</string>
+    <string name="topic_colours">Ranglar</string>
+    <string name="topic_numbers">123 Sonlar</string>
+    <string name="topic_clothes">Kiyimlar</string>
+    <string name="topic_pets">Uy hayvonlari</string>
+    <string name="topic_zoo">Yovvoyi hayvonlar</string>
+    <string name="topic_sweets">Shirinliklar</string>
+    <string name="topic_fruits">Mevalar</string>
+    <string name="topic_city">Shahar</string>
+    <string name="topic_school">Maktab</string>
+    <string name="topic_food">Taomlar</string>
+    <string name="topic_sports">Sport</string>
+    <string name="topic_family">Oila</string>
+    <string name="topic_actions">Harakatlar</string>
+    <string name="topic_house">Mening uyim</string>
+    <string name="topic_furniture">Jihozlar</string>
+    <string name="topic_calendar">Kun va Oylar</string>
+    <string name="topic_body">Tana a’zolari</string>
+
+    <!-- Horizontal Roadmap Activity Cards -->
+    <string name="activity_ice_cream_paint">Muzqaymoqni bo‘yash</string>
+    <string name="activity_sweet_shop">Shirinlik do‘koni</string>
+    <string name="activity_animal_shadow">Soyasini top</string>
+    <string name="activity_funny_monster">Sehrli to‘tiqush</string>
+    <string name="activity_yummy_table">Mazali dasturxon</string>
+    <string name="activity_supermarket">Supermarket savati</string>
+    <string name="activity_number_bakery">Raqamli shirinliklar</string>
+    <string name="activity_room_mystery">Xona jumboqlari</string>
+    <string name="activity_city_patrol">Shahar patruli</string>
+    <string name="activity_kitchen_find">Oshxonada qidiruv</string>
+    <string name="activity_voice_repeat">Eshit va takrorla</string>
+    <string name="activity_abc_tracing">ABC yozish mashqi</string>
+    <string name="activity_crane_words">So‘z quruvchi kran</string>
+    <string name="activity_color_bubbles">Rangli pufaklar</string>
+    <string name="activity_spell_cone">Harflarni joyla</string>
+
+    <!-- Interactive Activity Preview Modal -->
+    <string name="modal_start_activity">Mashqni boshlash (+1 Stiker)</string>
+    <string name="modal_close">Yopish</string>
+    <string name="settings_title">Sozlamalar</string>
+    <string name="settings_sound_effects">Ovoz effektlari</string>
+    <string name="settings_background_music">Fon musiqasi</string>
 </resources>

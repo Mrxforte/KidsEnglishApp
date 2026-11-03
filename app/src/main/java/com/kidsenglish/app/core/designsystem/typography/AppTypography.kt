@@ -2,88 +2,93 @@ package com.kidsenglish.app.core.designsystem.typography
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.sp
-import com.kidsenglish.app.core.designsystem.color.AppColors
+import com.kidsenglish.app.R
+import com.kidsenglish.app.core.designsystem.dimensions.AppDimensions
 
 /**
- * Child-friendly, high-legibility typography designed for early language learners.
- * Fully supports Uzbek Latin diacritics (o‘, g‘, sh, ch) and Latin alphabets.
+ * Rounded, playful display font family (Fredoka) bundled locally in `res/font/fredoka.ttf`.
+ * Used for hero titles, brand headers, and child-friendly display headings.
+ */
+val KidsDisplayFontFamily = FontFamily(
+    Font(R.font.fredoka, FontWeight.Normal),
+    Font(R.font.fredoka, FontWeight.Medium),
+    Font(R.font.fredoka, FontWeight.SemiBold),
+    Font(R.font.fredoka, FontWeight.Bold)
+)
+
+/**
+ * Clean, highly legible rounded sans-serif font family (Nunito) bundled locally in `res/font/nunito.ttf`.
+ * Supports Uzbek Latin characters (`o‘`, `g‘`, `sh`, `ch`), Cyrillic, and English alphabets.
+ */
+val KidsBodyFontFamily = FontFamily(
+    Font(R.font.nunito, FontWeight.Normal),
+    Font(R.font.nunito, FontWeight.Medium),
+    Font(R.font.nunito, FontWeight.SemiBold),
+    Font(R.font.nunito, FontWeight.Bold)
+)
+
+/**
+ * Centralized Material 3 [Typography] configuration for Kids English.
+ * All font sizes and line heights are sourced from [AppDimensions].
  */
 val AppTypography = Typography(
+    // Splash Screen main brand title ("Kids English")
     displayLarge = TextStyle(
-        fontFamily = FontFamily.SansSerif,
-        fontWeight = FontWeight.Black,
-        fontSize = 38.sp,
-        lineHeight = 44.sp,
-        letterSpacing = 0.sp,
-        color = AppColors.TextPrimary
+        fontFamily = KidsDisplayFontFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = AppDimensions.TextSizeDisplayLarge,
+        lineHeight = AppDimensions.LineHeightDisplayLarge
     ),
+    // Major feature headers
     displayMedium = TextStyle(
-        fontFamily = FontFamily.SansSerif,
-        fontWeight = FontWeight.ExtraBold,
-        fontSize = 30.sp,
-        lineHeight = 36.sp,
-        letterSpacing = 0.sp,
-        color = AppColors.TextPrimary
+        fontFamily = KidsDisplayFontFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = AppDimensions.TextSizeDisplayMedium,
+        lineHeight = AppDimensions.LineHeightDisplayMedium
     ),
+    // Screen headlines
     headlineLarge = TextStyle(
-        fontFamily = FontFamily.SansSerif,
-        fontWeight = FontWeight.Bold,
-        fontSize = 26.sp,
-        lineHeight = 32.sp,
-        color = AppColors.TextPrimary
+        fontFamily = KidsDisplayFontFamily,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = AppDimensions.TextSizeHeadlineLarge,
+        lineHeight = AppDimensions.LineHeightHeadlineLarge
     ),
-    headlineMedium = TextStyle(
-        fontFamily = FontFamily.SansSerif,
-        fontWeight = FontWeight.Bold,
-        fontSize = 22.sp,
-        lineHeight = 28.sp,
-        color = AppColors.TextPrimary
-    ),
+    // Splash Screen friendly subtitle and card headers
     titleLarge = TextStyle(
-        fontFamily = FontFamily.SansSerif,
-        fontWeight = FontWeight.SemiBold,
-        fontSize = 19.sp,
-        lineHeight = 25.sp,
-        color = AppColors.TextPrimary
-    ),
-    titleMedium = TextStyle(
-        fontFamily = FontFamily.SansSerif,
-        fontWeight = FontWeight.SemiBold,
-        fontSize = 16.sp,
-        lineHeight = 22.sp,
-        color = AppColors.TextPrimary
-    ),
-    bodyLarge = TextStyle(
-        fontFamily = FontFamily.SansSerif,
-        fontWeight = FontWeight.Normal,
-        fontSize = 16.sp,
-        lineHeight = 24.sp,
-        color = AppColors.TextPrimary
-    ),
-    bodyMedium = TextStyle(
-        fontFamily = FontFamily.SansSerif,
-        fontWeight = FontWeight.Medium,
-        fontSize = 14.sp,
-        lineHeight = 20.sp,
-        color = AppColors.TextSecondary
-    ),
-    labelLarge = TextStyle(
-        fontFamily = FontFamily.SansSerif,
+        fontFamily = KidsBodyFontFamily,
         fontWeight = FontWeight.Bold,
-        fontSize = 15.sp,
-        lineHeight = 20.sp,
-        letterSpacing = 0.2.sp,
-        color = AppColors.TextPrimary
+        fontSize = AppDimensions.TextSizeTitleLarge,
+        lineHeight = AppDimensions.LineHeightTitleLarge
     ),
-    labelSmall = TextStyle(
-        fontFamily = FontFamily.SansSerif,
+    // Welcome pill badge and prominent labels
+    titleMedium = TextStyle(
+        fontFamily = KidsBodyFontFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = AppDimensions.TextSizeTitleMedium,
+        lineHeight = AppDimensions.LineHeightTitleMedium
+    ),
+    // Primary body copy
+    bodyLarge = TextStyle(
+        fontFamily = KidsBodyFontFamily,
         fontWeight = FontWeight.Medium,
-        fontSize = 11.sp,
-        lineHeight = 16.sp,
-        letterSpacing = 0.5.sp,
-        color = AppColors.TextMuted
+        fontSize = AppDimensions.TextSizeBodyLarge,
+        lineHeight = AppDimensions.LineHeightBodyLarge
+    ),
+    // Splash Screen loading status text and secondary copy
+    bodyMedium = TextStyle(
+        fontFamily = KidsBodyFontFamily,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = AppDimensions.TextSizeBodyMedium,
+        lineHeight = AppDimensions.LineHeightBodyMedium
+    ),
+    // Button text
+    labelLarge = TextStyle(
+        fontFamily = KidsDisplayFontFamily,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = AppDimensions.TextSizeLabelLarge,
+        lineHeight = AppDimensions.LineHeightLabelLarge
     )
 )

@@ -1,0 +1,52 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="160dp"
+    android:height="120dp"
+    android:viewportWidth="160"
+    android:viewportHeight="120">
+    <!-- Pastel Sweet Shop Backdrop -->
+    <path
+        android:fillColor="#F8BBD0"
+        android:pathData="M0,0h160v120h-160z" />
+    <!-- Striped Awning Header -->
+    <path
+        android:fillColor="#EC407A"
+        android:pathData="M0,0h32v22a16,12 0 0,1 -32,0z M64,0h32v22a16,12 0 0,1 -32,0z M128,0h32v22a16,12 0 0,1 -32,0z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32,0h32v22a16,12 0 0,1 -32,0z M96,0h32v22a16,12 0 0,1 -32,0z" />
+    <!-- Counter Table -->
+    <path
+        android:fillColor="#8D6E63"
+        android:pathData="M0,88h160v32h-160z" />
+    <!-- Ice Cream Cone Center -->
+    <path
+        android:fillColor="#FFB74D"
+        android:pathData="M66,64 L94,64 L80,104 Z" />
+    <path
+        android:fillColor="#FFF59D"
+        android:pathData="M62,56 a13,13 0 1,0 26,0 a13,13 0 1,0 -26,0" />
+    <path
+        android:fillColor="#F48FB1"
+        android:pathData="M74,56 a13,13 0 1,0 26,0 a13,13 0 1,0 -26,0" />
+    <path
+        android:fillColor="#80DEEA"
+        android:pathData="M68,42 a13,13 0 1,0 24,0 a13,13 0 1,0 -24,0" />
+    <!-- Red Cherry on Top -->
+    <path
+        android:fillColor="#E53935"
+        android:pathData="M80,28 m-6,0 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0" />
+    <!-- Red Apple on Left -->
+    <path
+        android:fillColor="#E53935"
+        android:pathData="M22,72 a14,14 0 1,0 28,0 a14,14 0 1,0 -28,0" />
+    <path
+        android:fillColor="#43A047"
+        android:pathData="M36,54 Q44,50 42,60 Q36,60 36,54 Z" />
+    <!-- Frosted Cupcake on Right -->
+    <path
+        android:fillColor="#FFCA28"
+        android:pathData="M114,72 L140,72 L136,92 L118,92 Z" />
+    <path
+        android:fillColor="#AB47BC"
+        android:pathData="M112,68 a15,12 0 1,0 30,0 a15,12 0 1,0 -30,0" />
+</vector>

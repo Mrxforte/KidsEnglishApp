@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+    <!-- Soft Sunny Halo -->
+    <path
+        android:fillColor="#33FFD54F"
+        android:pathData="M100,10 C149.7,10 190,50.3 190,100 C190,149.7 149.7,190 100,190 C50.3,190 10,149.7 10,100 C10,50.3 50.3,10 100,10 Z" />
+
+    <!-- Left & Right Rainbow Wings (Blue, Green, Yellow, Orange, Red layers) -->
+    <!-- Left Wing Outer Blue Feathers -->
+    <path
+        android:fillColor="#039BE5"
+        android:pathData="M48,110 C18,114 12,138 28,154 C38,162 54,154 60,142 Z" />
+    <!-- Left Wing Green Feathers -->
+    <path
+        android:fillColor="#43A047"
+        android:pathData="M50,106 C24,108 18,128 32,142 C42,150 56,144 62,134 Z" />
+    <!-- Left Wing Yellow/Orange Feathers -->
+    <path
+        android:fillColor="#FFB300"
+        android:pathData="M54,102 C32,102 26,118 38,130 C46,136 58,132 64,124 Z" />
+
+    <!-- Right Wing Outer Blue Feathers -->
+    <path
+        android:fillColor="#039BE5"
+        android:pathData="M152,104 C184,96 192,122 174,142 C164,152 146,146 140,134 Z" />
+    <!-- Right Wing Green Feathers -->
+    <path
+        android:fillColor="#43A047"
+        android:pathData="M148,100 C176,94 182,114 168,130 C158,138 144,134 138,124 Z" />
+    <!-- Right Wing Yellow/Orange Feathers -->
+    <path
+        android:fillColor="#FFB300"
+        android:pathData="M144,96 C166,92 172,106 160,118 C152,126 140,122 136,114 Z" />
+
+    <!-- Parrot Red Body & Tail -->
+    <path
+        android:fillColor="#E53935"
+        android:pathData="M100,92 C130,92 146,114 142,146 C138,168 122,176 100,176 C78,176 62,168 58,146 C54,114 70,92 100,92 Z" />
+
+    <!-- Fluffy Creamy-White Chest Bib -->
+    <path
+        android:fillColor="#FFFDF7"
+        android:pathData="M100,112 C118,112 126,126 122,148 C118,162 110,168 100,168 C90,168 82,162 78,148 C74,126 82,112 100,112 Z" />
+
+    <!-- Top Fluffy Red Feather Crest (3 Tuft Feathers) -->
+    <path
+        android:fillColor="#E53935"
+        android:pathData="M94,42 C92,20 108,12 118,16 C114,26 108,36 104,44 Z" />
+    <path
+        android:fillColor="#F44336"
+        android:pathData="M102,44 C106,24 122,20 130,26 C122,34 114,42 108,46 Z" />
+    <path
+        android:fillColor="#D32F2F"
+        android:pathData="M86,46 C80,28 90,20 98,22 C96,30 94,38 92,46 Z" />
+
+    <!-- Big Round Scarlet-Red Parrot Head -->
+    <path
+        android:fillColor="#F44336"
+        android:pathData="M100,38 C136,38 158,62 156,92 C154,118 132,130 100,130 C68,130 46,118 44,92 C42,62 64,38 100,38 Z" />
+
+    <!-- Creamy-White Eye & Cheek Patch -->
+    <path
+        android:fillColor="#FFF8E1"
+        android:pathData="M52,82 C52,62 72,54 88,66 C94,70 106,70 112,66 C128,54 148,62 148,82 C148,108 128,122 100,122 C72,122 52,108 52,82 Z" />
+
+    <!-- Left Big Glossy Eye -->
+    <path
+        android:fillColor="#3E2723"
+        android:pathData="M74,66 C83,66 90,74 90,83 C90,92 83,100 74,100 C65,100 58,92 58,83 C58,74 65,66 74,66 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M69,72 C72.5,72 75,74.5 75,78 C75,81.5 72.5,84 69,84 C65.5,84 63,81.5 63,78 C63,74.5 65.5,72 69,72 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M79,88 C81,88 82.5,89.5 82.5,91.5 C82.5,93.5 81,95 79,95 C77,95 75.5,93.5 75.5,91.5 C75.5,89.5 77,88 79,88 Z" />
+
+    <!-- Right Big Glossy Eye -->
+    <path
+        android:fillColor="#3E2723"
+        android:pathData="M126,66 C135,66 142,74 142,83 C142,92 135,100 126,100 C117,100 110,92 110,83 C110,74 117,66 126,66 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M121,72 C124.5,72 127,74.5 127,78 C127,81.5 124.5,84 121,84 C117.5,84 115,81.5 115,78 C115,74.5 117.5,72 121,72 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M131,88 C133,88 134.5,89.5 134.5,91.5 C134.5,93.5 133,95 131,95 C129,95 127.5,93.5 127.5,91.5 C127.5,89.5 129,88 131,88 Z" />
+
+    <!-- Rosy Pink Cheeks -->
+    <path
+        android:fillColor="#88FF8A80"
+        android:pathData="M62,102 C67,102 71,105 71,109 C71,113 67,116 62,116 C57,116 53,113 53,109 C53,105 57,102 62,102 Z" />
+    <path
+        android:fillColor="#88FF8A80"
+        android:pathData="M138,102 C143,102 147,105 147,109 C147,113 143,116 138,116 C133,116 129,113 129,109 C129,105 133,102 138,102 Z" />
+
+    <!-- Golden-Yellow Curved Parrot Beak & Happy Smile -->
+    <!-- Open Mouth & Pink Tongue -->
+    <path
+        android:fillColor="#4E342E"
+        android:pathData="M86,98 C86,114 114,114 114,98 Z" />
+    <path
+        android:fillColor="#F06292"
+        android:pathData="M92,104 C92,112 108,112 108,104 Z" />
+    <!-- Upper Curved Beak -->
+    <path
+        android:fillColor="#FFCA28"
+        android:pathData="M100,78 C114,78 120,88 116,99 C108,103 92,103 84,99 C80,88 86,78 100,78 Z" />
+    <!-- Lower Beak Rim -->
+    <path
+        android:fillColor="#FFB300"
+        android:pathData="M86,98 C92,116 108,116 114,98 C108,108 92,108 86,98 Z" />
+
+    <!-- Cute Yellow Parrot Feet -->
+    <path
+        android:fillColor="#FFCA28"
+        android:pathData="M72,172 C64,172 60,180 68,182 L88,182 C92,182 90,172 82,172 Z" />
+    <path
+        android:fillColor="#FFCA28"
+        android:pathData="M118,172 C110,172 108,182 112,182 L132,182 C140,180 136,172 128,172 Z" />
+
+    <!-- Magic Star Wand Held in Left Hand -->
+    <path
+        android:fillColor="#29B6F6"
+        android:pathData="M24,78 L30,75 L48,126 L42,129 Z" />
+    <path
+        android:fillColor="#E53935"
+        android:pathData="M36,118 C43,118 48,123 48,130 C48,137 43,142 36,142 C29,142 24,137 24,130 C24,123 29,118 36,118 Z" />
+    <!-- Golden Star on Wand Tip -->
+    <path
+        android:fillColor="#FFD54F"
+        android:pathData="M24,54 L29,64 L40,65 L32,73 L34,84 L24,78 L14,84 L16,73 L8,65 L19,64 Z" />
+</vector>

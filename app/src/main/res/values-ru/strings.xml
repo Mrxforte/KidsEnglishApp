@@ -1,60 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Global Application Identity -->
     <string name="app_name">Kids English</string>
 
-    <!-- General Navigation & Actions -->
-    <string name="action_back">Назад</string>
-    <string name="action_continue">Продолжить</string>
-    <string name="action_next">Далее</string>
-    <string name="action_try_again">Попробовать снова</string>
-    <string name="action_finish">Вернуться на карту</string>
-    <string name="action_listen">Слушать</string>
-    <string name="action_slow_listen">Медленно</string>
-    <string name="action_settings">Настройки</string>
-    <string name="action_close">Закрыть</string>
-    <string name="action_reset">Сбросить</string>
+    <!-- Splash Screen: Main brand welcome title -->
+    <string name="splash_welcome">Kids English</string>
 
-    <!-- Roadmap & Progression -->
-    <string name="roadmap_title">Мой путь</string>
-    <string name="roadmap_banner">⭐ Путешествие в мир знаний! ⭐</string>
-    <string name="roadmap_streak_format">%d дн.</string>
-    <string name="roadmap_level_prefix">Уровень %d</string>
-    <string name="roadmap_locked_label">(Закрыто)</string>
-    <string name="roadmap_completed_label">Пройдено</string>
-    <string name="roadmap_current_label">В процессе</string>
-    <string name="full_roadmap_title">Азбучное путешествие</string>
+    <!-- Splash Screen: Friendly educational subtitle -->
+    <string name="splash_subtitle">Учим английский играя каждый день!</string>
 
-    <!-- Lesson Sections -->
-    <string name="section_welcome">Добро пожаловать</string>
-    <string name="section_discover">Узнаём</string>
-    <string name="section_understand">Понимаем</string>
-    <string name="section_practice">Практика</string>
-    <string name="section_mini_game">Мини-игра</string>
-    <string name="section_review">Повторение</string>
-    <string name="section_completion">Отлично!</string>
+    <!-- Splash Screen: Top pill badge text -->
+    <string name="splash_badge">✨ Для маленьких исследователей</string>
 
-    <!-- Lesson Feedback & Completion -->
-    <string name="feedback_correct">Отлично! Верно! 🎉</string>
-    <string name="feedback_incorrect">Почти получилось, попробуй ещё! 💪</string>
-    <string name="completion_congrats">Ура! Урок успешно завершён!</string>
-    <string name="completion_stars_earned">Полученные звёзды</string>
-    <string name="completion_score_format">Правильно: %1$d из %2$d</string>
-    <string name="completion_high_five">Дай пять! Ты молодец! 🌟</string>
+    <!-- Splash Screen: Loading status indicator label -->
+    <string name="splash_loading">Загружаем волшебный мир…</string>
 
-    <!-- Audio & Voice Settings -->
-    <string name="settings_title">Звук и настройки</string>
-    <string name="settings_music_label">Фоновая музыка</string>
-    <string name="settings_sfx_label">Звуковые эффекты</string>
-    <string name="settings_voice_label">Голос произношения</string>
-    <string name="settings_music_volume">Громкость музыки</string>
-    <string name="settings_voice_speed">Скорость речи (Обычная / Медленная)</string>
-    <string name="settings_reset_progress">Сбросить прогресс</string>
-    <string name="settings_reset_confirm">Вы действительно хотите сбросить прогресс?</string>
+    <!-- Splash Screen: Ready status indicator label -->
+    <string name="splash_ready">Готово к началу!</string>
 
-    <!-- Character & Mascot -->
-    <string name="mascot_name">Лео</string>
-    <string name="mascot_hello">Привет, юный друг! 👋</string>
-    <string name="mascot_praise">Молодец! Всё правильно!</string>
-    <string name="mascot_encourage">Не сдавайся, попробуй ещё разок!</string>
-    <string name="mascot_listen">Послушай внимательно, как звучит слово!</string>
+    <!-- Splash Screen: Accessibility content descriptions -->
+    <string name="cd_splash_mascot">Дружелюбный талисман волшебный попугайчик Kids English</string>
+    <string name="cd_splash_logo">Логотип приложения Kids English</string>
+
+    <!-- Horizontal Roadmap HUD -->
+    <string name="roadmap_stickers_today">Наклейки сегодня:</string>
+    <string name="roadmap_stickers_count">%1$d/%2$d</string>
+    <string name="roadmap_words_learned">Изучено слов</string>
+    <string name="roadmap_free_badge">БЕСПЛАТНО</string>
+    <string name="roadmap_all_topics_badge">Все темы</string>
+    <string name="roadmap_adventure_badge">Карта игр</string>
+    <string name="roadmap_locked_toast">Сначала пройдите открытые задания!</string>
+    <string name="roadmap_sticker_earned">+1 Наклейка получена! Молодец!</string>
+
+    <!-- Roadmap HUD Accessibility -->
+    <string name="cd_roadmap_grid_toggle">Открыть сетку тем</string>
+    <string name="cd_roadmap_settings">Открыть настройки</string>
+    <string name="cd_roadmap_stickers">Прогресс наклеек за сегодня</string>
+    <string name="cd_roadmap_locked">Закрытое задание</string>
+
+    <!-- 18 Topic Categories (3x6 Horizontal Grid Template) -->
+    <string name="topic_abc">ABC Алфавит</string>
+    <string name="topic_colours">Цвета</string>
+    <string name="topic_numbers">123 Цифры</string>
+    <string name="topic_clothes">Одежда</string>
+    <string name="topic_pets">Питомцы</string>
+    <string name="topic_zoo">Зоопарк</string>
+    <string name="topic_sweets">Сладости</string>
+    <string name="topic_fruits">Фрукты</string>
+    <string name="topic_city">Город</string>
+    <string name="topic_school">Школа</string>
+    <string name="topic_food">Еда</string>
+    <string name="topic_sports">Спорт</string>
+    <string name="topic_family">Семья</string>
+    <string name="topic_actions">Действия</string>
+    <string name="topic_house">Мой дом</string>
+    <string name="topic_furniture">Мебель</string>
+    <string name="topic_calendar">Календарь</string>
+    <string name="topic_body">Части тела</string>
+
+    <!-- Horizontal Roadmap Activity Cards -->
+    <string name="activity_ice_cream_paint">Раскрась мороженое</string>
+    <string name="activity_sweet_shop">Магазин сладостей</string>
+    <string name="activity_animal_shadow">Найди тень</string>
+    <string name="activity_funny_monster">Волшебный попугайчик</string>
+    <string name="activity_yummy_table">Вкусный стол</string>
+    <string name="activity_supermarket">Супермаркет</string>
+    <string name="activity_number_bakery">Пекарня цифр</string>
+    <string name="activity_room_mystery">Загадки комнаты</string>
+    <string name="activity_city_patrol">Городской патруль</string>
+    <string name="activity_kitchen_find">Детектив на кухне</string>
+    <string name="activity_voice_repeat">Слушай и повторяй</string>
+    <string name="activity_abc_tracing">Пишем буквы ABC</string>
+    <string name="activity_crane_words">Кран со словами</string>
+    <string name="activity_color_bubbles">Цветные шарики</string>
+    <string name="activity_spell_cone">Собери слово</string>
+
+    <!-- Interactive Activity Preview Modal -->
+    <string name="modal_start_activity">Начать игру (+1 Наклейка)</string>
+    <string name="modal_close">Закрыть</string>
+    <string name="settings_title">Настройки</string>
+    <string name="settings_sound_effects">Звуковые эффекты</string>
+    <string name="settings_background_music">Фоновая музыка</string>
 </resources>

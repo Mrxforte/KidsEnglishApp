@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Global Application Identity -->
+    <string name="app_name">Kids English</string>
+
+    <!-- Splash Screen: Main brand welcome title -->
+    <string name="splash_welcome">Kids English</string>
+
+    <!-- Splash Screen: Friendly educational subtitle -->
+    <string name="splash_subtitle">Learn English through playful adventures!</string>
+
+    <!-- Splash Screen: Top pill badge text -->
+    <string name="splash_badge">✨ Made for Young Learners</string>
+
+    <!-- Splash Screen: Loading status indicator label -->
+    <string name="splash_loading">Preparing your magical world…</string>
+
+    <!-- Splash Screen: Ready status indicator label -->
+    <string name="splash_ready">Ready to explore!</string>
+
+    <!-- Splash Screen: Accessibility content descriptions -->
+    <string name="cd_splash_mascot">Kids English friendly magic parrot mascot</string>
+    <string name="cd_splash_logo">Kids English application logo</string>
+
+    <!-- Horizontal Roadmap HUD -->
+    <string name="roadmap_stickers_today">Stickers today:</string>
+    <string name="roadmap_stickers_count">%1$d/%2$d</string>
+    <string name="roadmap_words_learned">Words learned</string>
+    <string name="roadmap_free_badge">FREE</string>
+    <string name="roadmap_all_topics_badge">All Topics</string>
+    <string name="roadmap_adventure_badge">Adventure Map</string>
+    <string name="roadmap_locked_toast">Complete earlier activities to unlock!</string>
+    <string name="roadmap_sticker_earned">+1 Sticker earned! Great job!</string>
+
+    <!-- Roadmap HUD Accessibility -->
+    <string name="cd_roadmap_grid_toggle">Toggle topics grid</string>
+    <string name="cd_roadmap_settings">Open settings</string>
+    <string name="cd_roadmap_stickers">Daily stickers progress</string>
+    <string name="cd_roadmap_locked">Locked activity</string>
+
+    <!-- 18 Topic Categories (3x6 Horizontal Grid Template) -->
+    <string name="topic_abc">ABC</string>
+    <string name="topic_colours">Colours</string>
+    <string name="topic_numbers">123 Numbers</string>
+    <string name="topic_clothes">Clothes</string>
+    <string name="topic_pets">Pets</string>
+    <string name="topic_zoo">Wild Animals</string>
+    <string name="topic_sweets">Sweets</string>
+    <string name="topic_fruits">Fruits</string>
+    <string name="topic_city">City</string>
+    <string name="topic_school">School</string>
+    <string name="topic_food">Food</string>
+    <string name="topic_sports">Sports</string>
+    <string name="topic_family">Family</string>
+    <string name="topic_actions">Actions</string>
+    <string name="topic_house">My House</string>
+    <string name="topic_furniture">Furniture</string>
+    <string name="topic_calendar">Calendar</string>
+    <string name="topic_body">Body Parts</string>
+
+    <!-- Horizontal Roadmap Activity Cards -->
+    <string name="activity_ice_cream_paint">Ice Cream Coloring</string>
+    <string name="activity_sweet_shop">Ice Cream Shop</string>
+    <string name="activity_animal_shadow">Shadow Match</string>
+    <string name="activity_funny_monster">Magic Parrot</string>
+    <string name="activity_yummy_table">Yummy Table</string>
+    <string name="activity_supermarket">Supermarket</string>
+    <string name="activity_number_bakery">Number Bakery</string>
+    <string name="activity_room_mystery">Room Mystery</string>
+    <string name="activity_city_patrol">City Patrol</string>
+    <string name="activity_kitchen_find">Kitchen Detective</string>
+    <string name="activity_voice_repeat">Listen &amp; Repeat</string>
+    <string name="activity_abc_tracing">ABC Tracing</string>
+    <string name="activity_crane_words">Word Crane</string>
+    <string name="activity_color_bubbles">Colour Bubbles</string>
+    <string name="activity_spell_cone">Spell the Word</string>
+
+    <!-- Interactive Activity Preview Modal -->
+    <string name="modal_start_activity">Play Activity (+1 Sticker)</string>
+    <string name="modal_close">Close</string>
+    <string name="settings_title">Settings</string>
+    <string name="settings_sound_effects">Sound Effects</string>
+    <string name="settings_background_music">Background Music</string>
+</resources>

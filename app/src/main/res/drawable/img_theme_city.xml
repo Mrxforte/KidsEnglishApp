@@ -1,0 +1,51 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="160dp"
+    android:height="120dp"
+    android:viewportWidth="160"
+    android:viewportHeight="120">
+    <!-- Bright City Sky -->
+    <path
+        android:fillColor="#64B5F6"
+        android:pathData="M0,0h160v120h-160z" />
+    <!-- City Buildings Skyline -->
+    <path
+        android:fillColor="#5C6BC0"
+        android:pathData="M12,32h32v56h-32z" />
+    <path
+        android:fillColor="#FFCA28"
+        android:pathData="M52,20h42v68h-42z" />
+    <path
+        android:fillColor="#EF5350"
+        android:pathData="M102,38h38v50h-38z" />
+    <!-- Building Windows -->
+    <path
+        android:fillColor="#FFF9C4"
+        android:pathData="M60,28h10v10h-10z M76,28h10v10h-10z M60,44h10v10h-10z M76,44h10v10h-10z" />
+    <path
+        android:fillColor="#E1F5FE"
+        android:pathData="M20,40h16v10h-16z M20,56h16v10h-16z M110,46h22v12h-22z" />
+    <!-- Asphalt Road & Dashed Line -->
+    <path
+        android:fillColor="#37474F"
+        android:pathData="M0,84h160v36h-160z" />
+    <path
+        android:fillColor="#FFD54F"
+        android:pathData="M10,100h22v4h-22z M48,100h22v4h-22z M86,100h22v4h-22z M124,100h22v4h-22z" />
+    <!-- Cute Blue Patrol Car -->
+    <path
+        android:fillColor="#1976D2"
+        android:pathData="M42,74 h64 a8,8 0 0,1 8,8 v12 h-80 v-12 a8,8 0 0,1 8,-8 z" />
+    <path
+        android:fillColor="#42A5F5"
+        android:pathData="M54,60 h38 l8,14 h-54 z" />
+    <path
+        android:fillColor="#E53935"
+        android:pathData="M68,55 h10 v5 h-10 z" />
+    <!-- Car Wheels -->
+    <path
+        android:fillColor="#263238"
+        android:pathData="M52,94 m-9,0 a9,9 0 1,0 18,0 a9,9 0 1,0 -18,0" />
+    <path
+        android:fillColor="#263238"
+        android:pathData="M96,94 m-9,0 a9,9 0 1,0 18,0 a9,9 0 1,0 -18,0" />
+</vector>

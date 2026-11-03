@@ -1,0 +1,40 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="160dp"
+    android:height="120dp"
+    android:viewportWidth="160"
+    android:viewportHeight="120">
+    <!-- Warm Morning Sky -->
+    <path
+        android:fillColor="#81D4FA"
+        android:pathData="M0,0h160v120h-160z" />
+    <!-- Garden Lawn -->
+    <path
+        android:fillColor="#66BB6A"
+        android:pathData="M0,80 Q80,68 160,80 L160,120 L0,120 Z" />
+    <!-- Cozy Family House -->
+    <path
+        android:fillColor="#FFF8E1"
+        android:pathData="M44,50h72v44h-72z" />
+    <!-- Red Pitched Roof -->
+    <path
+        android:fillColor="#E53935"
+        android:pathData="M34,52 L80,18 L126,52 Z" />
+    <!-- Wooden Door & Sunny Windows -->
+    <path
+        android:fillColor="#8D6E63"
+        android:pathData="M72,66h16v28h-16z" />
+    <path
+        android:fillColor="#29B6F6"
+        android:pathData="M52,58h14v14h-14z M94,58h14v14h-14z" />
+    <!-- Green Garden Tree -->
+    <path
+        android:fillColor="#6D4C41"
+        android:pathData="M18,66h8v26h-8z" />
+    <path
+        android:fillColor="#43A047"
+        android:pathData="M22,52 m-16,0 a16,16 0 1,0 32,0 a16,16 0 1,0 -32,0" />
+    <!-- Golden Sun -->
+    <path
+        android:fillColor="#FFD54F"
+        android:pathData="M136,24 m-12,0 a12,12 0 1,0 24,0 a12,12 0 1,0 -24,0" />
+</vector>

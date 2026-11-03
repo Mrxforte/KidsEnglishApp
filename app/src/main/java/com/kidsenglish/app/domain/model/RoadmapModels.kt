@@ -1,54 +1,102 @@
 package com.kidsenglish.app.domain.model
 
+import androidx.annotation.StringRes
+
 /**
- * Represents a single lesson node on the roadmap path.
+ * Visual color theme identifier for a Topic Category card in the 3x6 grid.
  */
-data class RoadmapNode(
+enum class TopicColorStyle {
+    PURPLE,
+    ROYAL_BLUE,
+    GREEN,
+    ORANGE,
+    MAGENTA,
+    LAVENDER
+}
+
+/**
+ * Icon identifier for each of the 18 Topic Categories in the Horizontal Roadmap template.
+ */
+enum class TopicIconType {
+    ABC_LETTERS,
+    COLOURS_PALETTE,
+    NUMBERS_123,
+    CLOTHES_SHIRT,
+    PETS_HOUSE,
+    ZOO_ELEPHANT,
+    SWEET_CAKE,
+    FRUITS_APPLE,
+    CITY_BUILDINGS,
+    SCHOOL_CAP,
+    FOOD_PLATE,
+    SPORTS_BALLS,
+    FAMILY_GROUP,
+    ACTIONS_RUN,
+    HOUSE_HOME,
+    FURNITURE_CHAIR,
+    CALENDAR_GRID,
+    BODY_SENSES
+}
+
+/**
+ * Custom procedural illustration scene identifier for each Activity Card on the Horizontal Roadmap.
+ */
+enum class ActivitySceneType {
+    ICE_CREAM_COLORING,
+    SWEET_SHOP_COUNTER,
+    COW_SHADOW_MATCH,
+    MONSTER_FACE_STICKERS,
+    YUMMY_FOOD_TABLE,
+    SUPERMARKET_CART,
+    NUMBER_BAKERY_DONUTS,
+    ROOM_MYSTERY_QUIZ,
+    CITY_POLICE_PATROL,
+    KITCHEN_MAGNIFIER_2,
+    DOG_MICROPHONE_SPEAK,
+    ABC_TRACING_BOARD,
+    CRANE_PINK_WORD,
+    COLOR_SPEECH_BUBBLES,
+    SPELL_RED_BLOCKS,
+    MIC_COLOR_CIRCLES
+}
+
+/**
+ * Domain model representing one of the 18 Topic Categories in the 3x6 Horizontal Grid.
+ */
+data class RoadmapTopicCategory(
     val id: String,
-    val lessonNumber: Int,
-    val title: String,                 // e.g. "A — Apple"
-    val titleUz: String,               // e.g. "A — Olma"
-    val topicId: String,
-    val state: NodeState,
-    val starsEarned: Int = 0,          // 0..3
-    val maxStars: Int = 3,
-    val isCurrent: Boolean = false,
-    val iconEmoji: String = "🍎",      // Fun emoji fallback for demo
-    val progressPercent: Float = 0f    // for topic header
+    @StringRes val titleRes: Int,
+    val customTitle: String? = null,
+    val iconType: TopicIconType,
+    val colorStyle: TopicColorStyle,
+    val wordsLearnedProgress: Float,
+    val targetSectionIndex: Int,
+    val tiltDegrees: Float
 )
 
-enum class NodeState {
-    LOCKED,
-    AVAILABLE,
-    CURRENT,
-    COMPLETED
-}
-
 /**
- * A major topic section on the roadmap (e.g. Funny ABC)
+ * Domain model representing an illustrated Activity Card inside a Horizontal Roadmap section.
  */
-data class RoadmapTopic(
+data class RoadmapActivityCard(
     val id: String,
-    val number: Int,
-    val title: String,                 // "Funny ABC"
-    val titleUz: String,               // "Qiziqarli ABC"
-    val descriptionUz: String,
-    val emoji: String,
-    val totalLessons: Int,
-    val completedLessons: Int,
-    val nodes: List<RoadmapNode>,
-    val isUnlocked: Boolean = true
-) {
-    val completionPercent: Float
-        get() = if (totalLessons == 0) 0f else completedLessons.toFloat() / totalLessons
-}
+    val topicId: String,
+    @StringRes val titleRes: Int,
+    val sceneType: ActivitySceneType,
+    val isLocked: Boolean,
+    val isCompleted: Boolean,
+    val isLargeBoard: Boolean = false,
+    val tiltDegrees: Float = -1.2f
+)
 
 /**
- * Full roadmap data for the vertical journey
+ * Domain model representing a full horizontal section on the Levels Roadmap
+ * (e.g., FREE Starter Section, ABC Section, COLOURS Section).
  */
-data class RoadmapData(
-    val topics: List<RoadmapTopic>,
-    val currentNodeId: String? = null,
-    val totalStars: Int = 0,
-    val streakDays: Int = 0
+data class RoadmapHorizontalSection(
+    val id: String,
+    @StringRes val bannerTitleRes: Int,
+    val iconType: TopicIconType,
+    val isFreeBanner: Boolean,
+    val wordsLearnedProgress: Float,
+    val activities: List<RoadmapActivityCard>
 )

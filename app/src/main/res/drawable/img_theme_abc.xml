@@ -1,0 +1,65 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="160dp"
+    android:height="120dp"
+    android:viewportWidth="160"
+    android:viewportHeight="120">
+    <!-- Sunny Sky Backdrop -->
+    <path
+        android:fillColor="#29B6F6"
+        android:pathData="M0,0h160v120h-160z" />
+    <!-- Soft Rainbow Arc -->
+    <path
+        android:strokeColor="#FFCA28"
+        android:strokeWidth="6"
+        android:pathData="M16,105 A68,68 0 0,1 144,105" />
+    <path
+        android:strokeColor="#FF7043"
+        android:strokeWidth="5"
+        android:pathData="M24,105 A60,60 0 0,1 136,105" />
+    <!-- Fluffy White Clouds -->
+    <path
+        android:fillColor="#D9FFFFFF"
+        android:pathData="M18,34 a12,12 0 1,0 24,0 a10,10 0 1,0 18,2 h-42 z" />
+    <path
+        android:fillColor="#D9FFFFFF"
+        android:pathData="M112,26 a10,10 0 1,0 20,0 a8,8 0 1,0 14,2 h-34 z" />
+    <!-- Green Meadow Hill -->
+    <path
+        android:fillColor="#66BB6A"
+        android:pathData="M0,86 Q80,68 160,88 L160,120 L0,120 Z" />
+    <!-- Wooden Block A (Red/Gold) -->
+    <path
+        android:fillColor="#EF5350"
+        android:pathData="M26,48 h32 a6,6 0 0,1 6,6 v32 a6,6 0 0,1 -6,6 h-32 a6,6 0 0,1 -6,-6 v-32 a6,6 0 0,1 6,-6 z" />
+    <path
+        android:fillColor="#FFF8E1"
+        android:pathData="M31,53 h22 v28 h-22 z" />
+    <path
+        android:fillColor="#D32F2F"
+        android:pathData="M42,56 L35,76 L39,76 L40.5,71 L43.5,71 L45,76 L49,76 Z" />
+    <!-- Wooden Block B (Blue/Cyan) -->
+    <path
+        android:fillColor="#1E88E5"
+        android:pathData="M66,34 h32 a6,6 0 0,1 6,6 v32 a6,6 0 0,1 -6,6 h-32 a6,6 0 0,1 -6,-6 v-32 a6,6 0 0,1 6,-6 z" />
+    <path
+        android:fillColor="#E1F5FE"
+        android:pathData="M71,39 h22 v28 h-22 z" />
+    <path
+        android:fillColor="#1565C0"
+        android:pathData="M76,43 v20 h9 a5,5 0 0,0 0,-10 a5,5 0 0,0 0,-10 z" />
+    <!-- Wooden Block C (Purple/Gold) -->
+    <path
+        android:fillColor="#8E24AA"
+        android:pathData="M104,50 h32 a6,6 0 0,1 6,6 v32 a6,6 0 0,1 -6,6 h-32 a6,6 0 0,1 -6,-6 v-32 a6,6 0 0,1 6,-6 z" />
+    <path
+        android:fillColor="#F3E5F5"
+        android:pathData="M109,55 h22 v28 h-22 z" />
+    <path
+        android:strokeColor="#6A1B9A"
+        android:strokeWidth="4"
+        android:pathData="M125,62 A8,8 0 1,0 125,76" />
+    <!-- Twinkling Gold Stars -->
+    <path
+        android:fillColor="#FFD54F"
+        android:pathData="M82,12 L85,20 L93,20 L87,25 L89,33 L82,28 L75,33 L77,25 L71,20 L79,20 Z" />
+</vector>

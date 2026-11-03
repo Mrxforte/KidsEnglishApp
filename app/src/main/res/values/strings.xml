@@ -1,60 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Global Application Identity -->
     <string name="app_name">Kids English</string>
 
-    <!-- General Navigation & Actions -->
-    <string name="action_back">Back</string>
-    <string name="action_continue">Continue</string>
-    <string name="action_next">Next</string>
-    <string name="action_try_again">Try Again</string>
-    <string name="action_finish">Return to Map</string>
-    <string name="action_listen">Listen</string>
-    <string name="action_slow_listen">Listen Slow</string>
-    <string name="action_settings">Settings</string>
-    <string name="action_close">Close</string>
-    <string name="action_reset">Reset</string>
+    <!-- Splash Screen: Main brand welcome title -->
+    <string name="splash_welcome">Kids English</string>
 
-    <!-- Roadmap & Progression -->
-    <string name="roadmap_title">My Path</string>
-    <string name="roadmap_banner">⭐ Journey into the World of Knowledge! ⭐</string>
-    <string name="roadmap_streak_format">%d days</string>
-    <string name="roadmap_level_prefix">Level %d</string>
-    <string name="roadmap_locked_label">(Locked)</string>
-    <string name="roadmap_completed_label">Completed</string>
-    <string name="roadmap_current_label">In Progress</string>
-    <string name="full_roadmap_title">Alphabet Journey</string>
+    <!-- Splash Screen: Friendly educational subtitle -->
+    <string name="splash_subtitle">O‘ynab ingliz tilini o‘rganamiz!</string>
 
-    <!-- Lesson Sections -->
-    <string name="section_welcome">Welcome</string>
-    <string name="section_discover">Discover</string>
-    <string name="section_understand">Understand</string>
-    <string name="section_practice">Practice</string>
-    <string name="section_mini_game">Mini Game</string>
-    <string name="section_review">Review</string>
-    <string name="section_completion">Well Done!</string>
+    <!-- Splash Screen: Top pill badge text -->
+    <string name="splash_badge">✨ Kichkintoylar uchun</string>
 
-    <!-- Lesson Feedback & Completion -->
-    <string name="feedback_correct">Excellent! 🎉</string>
-    <string name="feedback_incorrect">Not quite, try again! 💪</string>
-    <string name="completion_congrats">Hooray! Lesson Completed!</string>
-    <string name="completion_stars_earned">Stars Earned</string>
-    <string name="completion_score_format">Correct: %1$d / %2$d</string>
-    <string name="completion_high_five">High five! You did great! 🌟</string>
+    <!-- Splash Screen: Loading status indicator label -->
+    <string name="splash_loading">Sehrli olam yuklanmoqda…</string>
 
-    <!-- Audio & Voice Settings -->
-    <string name="settings_title">Audio &amp; Settings</string>
-    <string name="settings_music_label">Background Music</string>
-    <string name="settings_sfx_label">Sound Effects</string>
-    <string name="settings_voice_label">Voice Pronunciation</string>
-    <string name="settings_music_volume">Music Volume</string>
-    <string name="settings_voice_speed">Voice Speed (Normal / Slow)</string>
-    <string name="settings_reset_progress">Reset Learning Progress</string>
-    <string name="settings_reset_confirm">Are you sure you want to reset all stars?</string>
+    <!-- Splash Screen: Ready status indicator label -->
+    <string name="splash_ready">Boshlashga tayyor!</string>
 
-    <!-- Character & Mascot -->
-    <string name="mascot_name">Leo</string>
-    <string name="mascot_hello">Hello little learner! 👋</string>
-    <string name="mascot_praise">Awesome job! You got it!</string>
-    <string name="mascot_encourage">Don’t give up, try one more time!</string>
-    <string name="mascot_listen">Listen closely to the sound!</string>
+    <!-- Splash Screen: Accessibility content descriptions -->
+    <string name="cd_splash_mascot">Kids English do‘stona to‘tiqush maskoti</string>
+    <string name="cd_splash_logo">Kids English ilova logotipi</string>
+
+    <!-- Horizontal Roadmap HUD -->
+    <string name="roadmap_stickers_today">Bugungi stikerlar:</string>
+    <string name="roadmap_stickers_count">%1$d/%2$d</string>
+    <string name="roadmap_words_learned">O‘rganilgan so‘zlar</string>
+    <string name="roadmap_free_badge">BEPUL</string>
+    <string name="roadmap_all_topics_badge">Barcha bo‘limlar</string>
+    <string name="roadmap_adventure_badge">O‘yinlar xaritasi</string>
+    <string name="roadmap_locked_toast">Bu mashq tez orada ochiladi!</string>
+    <string name="roadmap_sticker_earned">+1 Stiker qo‘shildi! Barakalla!</string>
+
+    <!-- Roadmap HUD Accessibility -->
+    <string name="cd_roadmap_grid_toggle">Bo‘limlar jadvalini ochish</string>
+    <string name="cd_roadmap_settings">Sozlamalarni ochish</string>
+    <string name="cd_roadmap_stickers">Bugungi stikerlar mukofoti</string>
+    <string name="cd_roadmap_locked">Yopiq mashq</string>
+
+    <!-- 18 Topic Categories (3x6 Horizontal Grid Template) -->
+    <string name="topic_abc">ABC Harflar</string>
+    <string name="topic_colours">Ranglar</string>
+    <string name="topic_numbers">123 Sonlar</string>
+    <string name="topic_clothes">Kiyimlar</string>
+    <string name="topic_pets">Uy hayvonlari</string>
+    <string name="topic_zoo">Yovvoyi hayvonlar</string>
+    <string name="topic_sweets">Shirinliklar</string>
+    <string name="topic_fruits">Mevalar</string>
+    <string name="topic_city">Shahar</string>
+    <string name="topic_school">Maktab</string>
+    <string name="topic_food">Taomlar</string>
+    <string name="topic_sports">Sport</string>
+    <string name="topic_family">Oila</string>
+    <string name="topic_actions">Harakatlar</string>
+    <string name="topic_house">Mening uyim</string>
+    <string name="topic_furniture">Jihozlar</string>
+    <string name="topic_calendar">Kun va Oylar</string>
+    <string name="topic_body">Tana a’zolari</string>
+
+    <!-- Horizontal Roadmap Activity Cards -->
+    <string name="activity_ice_cream_paint">Muzqaymoqni bo‘yash</string>
+    <string name="activity_sweet_shop">Shirinlik do‘koni</string>
+    <string name="activity_animal_shadow">Soyasini top</string>
+    <string name="activity_funny_monster">Sehrli to‘tiqush</string>
+    <string name="activity_yummy_table">Mazali dasturxon</string>
+    <string name="activity_supermarket">Supermarket savati</string>
+    <string name="activity_number_bakery">Raqamli shirinliklar</string>
+    <string name="activity_room_mystery">Xona jumboqlari</string>
+    <string name="activity_city_patrol">Shahar patruli</string>
+    <string name="activity_kitchen_find">Oshxonada qidiruv</string>
+    <string name="activity_voice_repeat">Eshit va takrorla</string>
+    <string name="activity_abc_tracing">ABC yozish mashqi</string>
+    <string name="activity_crane_words">So‘z quruvchi kran</string>
+    <string name="activity_color_bubbles">Rangli pufaklar</string>
+    <string name="activity_spell_cone">Harflarni joyla</string>
+
+    <!-- Interactive Activity Preview Modal -->
+    <string name="modal_start_activity">Mashqni boshlash (+1 Stiker)</string>
+    <string name="modal_close">Yopish</string>
+    <string name="settings_title">Sozlamalar</string>
+    <string name="settings_sound_effects">Ovoz effektlari</string>
+    <string name="settings_background_music">Fon musiqasi</string>
 </resources>

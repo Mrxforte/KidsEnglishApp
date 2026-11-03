@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <!-- Outer Golden Starburst Medallion -->
+    <path
+        android:fillColor="#FFFFB300"
+        android:pathData="M48,6 L58,28 L82,30 L64,46 L70,70 L48,57 L26,70 L32,46 L14,30 L38,28 Z" />
+    <!-- Inner Sky Blue Shield -->
+    <path
+        android:fillColor="#FF29B6F6"
+        android:pathData="M48,18 C64.5,18 78,31.5 78,48 C78,64.5 64.5,78 48,78 C31.5,78 18,64.5 18,48 C18,31.5 31.5,18 48,18 Z" />
+    <!-- White Open Book Pages -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M28,36 C36,34 44,36 48,40 C52,36 60,34 68,36 L68,62 C60,60 52,62 48,66 C44,62 36,60 28,62 Z" />
+    <!-- Book Spine Accent -->
+    <path
+        android:fillColor="#FFFF7043"
+        android:pathData="M46.5,39 L49.5,39 L49.5,66 L46.5,66 Z" />
+</vector>
