@@ -54,6 +54,7 @@ import kotlinx.coroutines.delay
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.remember
 import com.kidsenglish.app.core.utils.KidsAudioManager
+import com.kidsenglish.app.feature.roadmap.presentation.components.AbcInteractiveGameModal
 
 /**
  * Stateful route composable connecting [RoadmapViewModel] and [KidsAudioManager]
@@ -100,6 +101,9 @@ fun RoadmapRoute(
             audioManager.playStickerRewardFanfare(uiState.isSoundEffectsEnabled)
             viewModel.completeSelectedActivity()
         },
+        onPlayPhonicsAudio = {
+            audioManager.playCardTapChime(uiState.isSoundEffectsEnabled)
+        },
         onDismissActivityModal = viewModel::dismissActivityModal,
         onOpenSettings = {
             audioManager.playCardTapChime(uiState.isSoundEffectsEnabled)
@@ -131,6 +135,7 @@ fun RoadmapScreen(
     onSectionScrollConsumed: () -> Unit,
     onActivityCardClicked: (RoadmapActivityCard) -> Unit,
     onCompleteSelectedActivity: () -> Unit,
+    onPlayPhonicsAudio: () -> Unit,
     onDismissActivityModal: () -> Unit,
     onOpenSettings: () -> Unit,
     onDismissSettings: () -> Unit,
@@ -216,14 +221,23 @@ fun RoadmapScreen(
             }
         }
 
-        // Interactive Activity Preview & Sticker Reward Modal
+        // Interactive Activity Preview & Sticker Reward Modal / ABC Game Modal
         val activeCard = uiState.selectedActivity
         if (activeCard != null) {
-            ActivityPlayModal(
-                card = activeCard,
-                onStartAndEarnSticker = onCompleteSelectedActivity,
-                onDismiss = onDismissActivityModal
-            )
+            if (activeCard.letterChar != null || activeCard.topicId == "section_abc_board") {
+                AbcInteractiveGameModal(
+                    card = activeCard,
+                    onPlayAudioChime = onPlayPhonicsAudio,
+                    onCompleteAndUnlockNext = onCompleteSelectedActivity,
+                    onDismiss = onDismissActivityModal
+                )
+            } else {
+                ActivityPlayModal(
+                    card = activeCard,
+                    onStartAndEarnSticker = onCompleteSelectedActivity,
+                    onDismiss = onDismissActivityModal
+                )
+            }
         }
 
         // Audio Settings Modal

@@ -49,7 +49,7 @@ class AppStartupRepositoryImpl @Inject constructor(
         val baseBonus = (completedIds.size * 0.08f).coerceAtMost(0.6f)
 
         val topicNames = listOf(
-            // Initial 18 topics matching Screenshot 1
+            // Initial 18 topics
             "ABC Alphabet", "Colours & Paint", "123 Numbers", "Clothes & Style", "Pets & House", "Zoo Animals",
             "Sweet Cake", "Fruits & Apples", "City & Buildings", "School & Learning", "Food & Meals", "Sports & Games",
             "Family & Friends", "Action Verbs", "House & Home", "Furniture Types", "Calendar & Days", "Body & Senses",
@@ -103,7 +103,7 @@ class AppStartupRepositoryImpl @Inject constructor(
             val colorStyle = colors[index % colors.size]
             val iconType = icons[index % icons.size]
             val tilt = if (index % 2 == 0) -1.2f - (index % 3) * 0.1f else 1.1f + (index % 3) * 0.1f
-            val progress = ((index * 3 + 12) % 80) / 100f
+            val progress = if (index == 0) 0.45f else 0.0f
             val targetSection = index % 4
 
             val stringRes = when (index) {
@@ -136,14 +136,69 @@ class AppStartupRepositoryImpl @Inject constructor(
                 colorStyle = colorStyle,
                 wordsLearnedProgress = progress,
                 targetSectionIndex = targetSection,
-                tiltDegrees = tilt
+                tiltDegrees = tilt,
+                isLocked = index != 0 // Only Topic 1 (ABC) is unlocked; all other topics are locked!
             )
         }
     }
 
     override fun getHorizontalSections(completedIds: Set<String>): List<RoadmapHorizontalSection> {
+        val abcAlphabetData = listOf(
+            Triple('A', "Apple", "🍎"),
+            Triple('B', "Ball", "⚽"),
+            Triple('C', "Cat", "🐱"),
+            Triple('D', "Dog", "🐶"),
+            Triple('E', "Elephant", "🐘"),
+            Triple('F', "Fish", "🐟"),
+            Triple('G', "Giraffe", "🦒"),
+            Triple('H', "House", "🏠"),
+            Triple('I', "Ice Cream", "🍦"),
+            Triple('J', "Juice", "🧃"),
+            Triple('K', "Kite", "🪁"),
+            Triple('L', "Lion", "🦁"),
+            Triple('M', "Monkey", "🐒"),
+            Triple('N', "Nest", "🪹"),
+            Triple('O', "Owl", "🦉"),
+            Triple('P', "Penguin", "🐧"),
+            Triple('Q', "Queen", "👑"),
+            Triple('R', "Rabbit", "🐰"),
+            Triple('S', "Sun", "☀️"),
+            Triple('T', "Tiger", "🐯"),
+            Triple('U', "Umbrella", "☂️"),
+            Triple('V', "Violin", "🎻"),
+            Triple('W', "Watermelon", "🍉"),
+            Triple('X', "Xylophone", "🪗"),
+            Triple('Y', "Yacht", "⛵"),
+            Triple('Z', "Zebra", "🦓")
+        )
+
+        val abcActivities = abcAlphabetData.mapIndexed { idx, (char, word, emoji) ->
+            val cardId = "abc_letter_${char.lowercaseChar()}_level"
+            val prevCardId = if (idx > 0) "abc_letter_${abcAlphabetData[idx - 1].first.lowercaseChar()}_level" else null
+
+            // Letter A (idx == 0) or free_ice_cream completed unlocks Letter A
+            // Subsequent letters are unlocked when previous letter card is completed!
+            val isUnlocked = idx == 0 || (prevCardId != null && prevCardId in completedIds)
+            val tilt = if (idx % 2 == 0) -1.1f - (idx % 3) * 0.1f else 1.2f + (idx % 3) * 0.1f
+
+            RoadmapActivityCard(
+                id = cardId,
+                topicId = "section_abc_board",
+                titleRes = AppStrings.Roadmap.ACTIVITY_ABC_TRACING,
+                sceneType = ActivitySceneType.ABC_TRACING_BOARD,
+                isLocked = !isUnlocked,
+                isCompleted = cardId in completedIds,
+                isLargeBoard = true,
+                tiltDegrees = tilt,
+                letterChar = char,
+                phonicsWord = word,
+                phonicsEmoji = emoji,
+                customTitleText = "Letter $char - $word $emoji"
+            )
+        }
+
         return listOf(
-            // Section 0: FREE Starter Games (Screenshots 2 & 5)
+            // Section 0: FREE Starter Games
             RoadmapHorizontalSection(
                 id = "section_free",
                 bannerTitleRes = AppStrings.Roadmap.FREE_SECTION_TITLE,
@@ -156,16 +211,20 @@ class AppStartupRepositoryImpl @Inject constructor(
                         topicId = "section_free",
                         titleRes = AppStrings.Roadmap.ACTIVITY_ICE_CREAM_PAINT,
                         sceneType = ActivitySceneType.ICE_CREAM_COLORING,
-                        isLocked = false,
+                        isLocked = false, // Lesson 1: ONLY unlocked lesson!
                         isCompleted = "free_ice_cream" in completedIds,
-                        tiltDegrees = -1.3f
+                        tiltDegrees = -1.3f,
+                        letterChar = 'A',
+                        phonicsWord = "Apple",
+                        phonicsEmoji = "🍎",
+                        customTitleText = "Letter A - Apple 🍎"
                     ),
                     RoadmapActivityCard(
                         id = "free_yummy_table",
                         topicId = "section_free",
                         titleRes = AppStrings.Roadmap.ACTIVITY_YUMMY_TABLE,
                         sceneType = ActivitySceneType.YUMMY_FOOD_TABLE,
-                        isLocked = false,
+                        isLocked = "free_ice_cream" !in completedIds,
                         isCompleted = "free_yummy_table" in completedIds,
                         tiltDegrees = 1.1f
                     ),
@@ -174,7 +233,7 @@ class AppStartupRepositoryImpl @Inject constructor(
                         topicId = "section_free",
                         titleRes = AppStrings.Roadmap.ACTIVITY_SWEET_SHOP,
                         sceneType = ActivitySceneType.SWEET_SHOP_COUNTER,
-                        isLocked = false,
+                        isLocked = true,
                         isCompleted = "free_sweet_shop" in completedIds,
                         tiltDegrees = 1.0f
                     ),
@@ -183,7 +242,7 @@ class AppStartupRepositoryImpl @Inject constructor(
                         topicId = "section_free",
                         titleRes = AppStrings.Roadmap.ACTIVITY_SUPERMARKET,
                         sceneType = ActivitySceneType.SUPERMARKET_CART,
-                        isLocked = false,
+                        isLocked = true,
                         isCompleted = "free_supermarket" in completedIds,
                         tiltDegrees = -1.2f
                     ),
@@ -192,7 +251,7 @@ class AppStartupRepositoryImpl @Inject constructor(
                         topicId = "section_free",
                         titleRes = AppStrings.Roadmap.ACTIVITY_ANIMAL_SHADOW,
                         sceneType = ActivitySceneType.COW_SHADOW_MATCH,
-                        isLocked = false,
+                        isLocked = true,
                         isCompleted = "free_cow_shadow" in completedIds,
                         tiltDegrees = -1.1f
                     ),
@@ -201,7 +260,7 @@ class AppStartupRepositoryImpl @Inject constructor(
                         topicId = "section_free",
                         titleRes = AppStrings.Roadmap.ACTIVITY_NUMBER_BAKERY,
                         sceneType = ActivitySceneType.NUMBER_BAKERY_DONUTS,
-                        isLocked = false,
+                        isLocked = true,
                         isCompleted = "free_number_bakery" in completedIds,
                         tiltDegrees = 1.3f
                     ),
@@ -210,7 +269,7 @@ class AppStartupRepositoryImpl @Inject constructor(
                         topicId = "section_free",
                         titleRes = AppStrings.Roadmap.ACTIVITY_FUNNY_MONSTER,
                         sceneType = ActivitySceneType.MONSTER_FACE_STICKERS,
-                        isLocked = false,
+                        isLocked = true,
                         isCompleted = "free_monster" in completedIds,
                         tiltDegrees = 1.2f
                     ),
@@ -219,60 +278,22 @@ class AppStartupRepositoryImpl @Inject constructor(
                         topicId = "section_free",
                         titleRes = AppStrings.Roadmap.ACTIVITY_ROOM_MYSTERY,
                         sceneType = ActivitySceneType.ROOM_MYSTERY_QUIZ,
-                        isLocked = false,
+                        isLocked = true,
                         isCompleted = "free_room_mystery" in completedIds,
                         tiltDegrees = -1.0f
                     )
                 )
             ),
-            // Section 1: City, Kitchen, Speaking & Giant ABC Tracing Board (Screenshot 3)
+            // Section 1: Full 26 ABC Alphabet Levels (A - Z)
             RoadmapHorizontalSection(
                 id = "section_abc_board",
                 bannerTitleRes = AppStrings.Roadmap.TOPIC_ABC,
                 iconType = TopicIconType.ABC_LETTERS,
                 isFreeBanner = false,
-                wordsLearnedProgress = 0.38f,
-                activities = listOf(
-                    RoadmapActivityCard(
-                        id = "abc_city_patrol",
-                        topicId = "section_abc_board",
-                        titleRes = AppStrings.Roadmap.ACTIVITY_CITY_PATROL,
-                        sceneType = ActivitySceneType.CITY_POLICE_PATROL,
-                        isLocked = false,
-                        isCompleted = "abc_city_patrol" in completedIds,
-                        tiltDegrees = -1.2f
-                    ),
-                    RoadmapActivityCard(
-                        id = "abc_dog_voice",
-                        topicId = "section_abc_board",
-                        titleRes = AppStrings.Roadmap.ACTIVITY_VOICE_REPEAT,
-                        sceneType = ActivitySceneType.DOG_MICROPHONE_SPEAK,
-                        isLocked = false,
-                        isCompleted = "abc_dog_voice" in completedIds,
-                        tiltDegrees = 1.4f
-                    ),
-                    RoadmapActivityCard(
-                        id = "abc_kitchen_find",
-                        topicId = "section_abc_board",
-                        titleRes = AppStrings.Roadmap.ACTIVITY_KITCHEN_FIND,
-                        sceneType = ActivitySceneType.KITCHEN_MAGNIFIER_2,
-                        isLocked = false,
-                        isCompleted = "abc_kitchen_find" in completedIds,
-                        tiltDegrees = 1.1f
-                    ),
-                    RoadmapActivityCard(
-                        id = "abc_tracing_board",
-                        topicId = "section_abc_board",
-                        titleRes = AppStrings.Roadmap.ACTIVITY_ABC_TRACING,
-                        sceneType = ActivitySceneType.ABC_TRACING_BOARD,
-                        isLocked = false,
-                        isCompleted = "abc_tracing_board" in completedIds,
-                        isLargeBoard = true,
-                        tiltDegrees = -0.8f
-                    )
-                )
+                wordsLearnedProgress = (completedIds.count { it.startsWith("abc_letter_") || it == "free_ice_cream" } / 26f).coerceAtLeast(0.04f),
+                activities = abcActivities
             ),
-            // Section 2: COLOURS Section with Unlocked & Padlocked Cards (Screenshot 4)
+            // Section 2: COLOURS Section
             RoadmapHorizontalSection(
                 id = "section_colours",
                 bannerTitleRes = AppStrings.Roadmap.TOPIC_COLOURS,
@@ -285,7 +306,7 @@ class AppStartupRepositoryImpl @Inject constructor(
                         topicId = "section_colours",
                         titleRes = AppStrings.Roadmap.ACTIVITY_ICE_CREAM_PAINT,
                         sceneType = ActivitySceneType.ICE_CREAM_COLORING,
-                        isLocked = false,
+                        isLocked = true,
                         isCompleted = "col_ice_cream" in completedIds,
                         tiltDegrees = 1.2f
                     ),
@@ -303,7 +324,7 @@ class AppStartupRepositoryImpl @Inject constructor(
                         topicId = "section_colours",
                         titleRes = AppStrings.Roadmap.ACTIVITY_SWEET_SHOP,
                         sceneType = ActivitySceneType.SWEET_SHOP_COUNTER,
-                        isLocked = false,
+                        isLocked = true,
                         isCompleted = "col_sweet_shop" in completedIds,
                         tiltDegrees = -1.0f
                     ),
@@ -349,7 +370,7 @@ class AppStartupRepositoryImpl @Inject constructor(
                         topicId = "section_numbers",
                         titleRes = AppStrings.Roadmap.ACTIVITY_NUMBER_BAKERY,
                         sceneType = ActivitySceneType.NUMBER_BAKERY_DONUTS,
-                        isLocked = false,
+                        isLocked = true,
                         isCompleted = "num_bakery" in completedIds,
                         tiltDegrees = -1.2f
                     ),
@@ -358,7 +379,7 @@ class AppStartupRepositoryImpl @Inject constructor(
                         topicId = "section_numbers",
                         titleRes = AppStrings.Roadmap.ACTIVITY_KITCHEN_FIND,
                         sceneType = ActivitySceneType.KITCHEN_MAGNIFIER_2,
-                        isLocked = false,
+                        isLocked = true,
                         isCompleted = "num_kitchen_2" in completedIds,
                         tiltDegrees = 1.1f
                     ),

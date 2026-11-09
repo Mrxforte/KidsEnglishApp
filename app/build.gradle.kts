@@ -27,17 +27,19 @@ android {
     }
 
     signingConfigs {
-        create("debugConfig") {
-            storeFile = file("${rootDir}/debug.keystore")
-            storePassword = "android"
-            keyAlias = "androiddebugkey"
-            keyPassword = "android"
+        getByName("debug") {
+            val customDebugKeystore = file("$rootDir/debug.keystore")
+            if (customDebugKeystore.exists()) {
+                storeFile = customDebugKeystore
+                storePassword = "android"
+                keyAlias = "androiddebugkey"
+                keyPassword = "android"
+            }
         }
     }
 
     buildTypes {
         debug {
-            signingConfig = signingConfigs.getByName("debugConfig")
         }
         release {
             isMinifyEnabled = false

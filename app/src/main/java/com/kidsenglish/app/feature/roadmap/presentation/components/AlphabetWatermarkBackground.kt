@@ -7,7 +7,7 @@ import androidx.compose.animation.core.infiniteRepeatable
 import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.background
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
@@ -15,6 +15,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.drawscope.rotate
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.drawText
 import androidx.compose.ui.text.font.FontWeight
@@ -22,15 +24,15 @@ import androidx.compose.ui.text.rememberTextMeasurer
 import com.kidsenglish.app.core.constants.AppConstants
 import com.kidsenglish.app.core.designsystem.colors.AppColors
 import com.kidsenglish.app.core.designsystem.dimensions.AppDimensions
+import com.kidsenglish.app.core.designsystem.images.AppImages
 import com.kidsenglish.app.core.designsystem.typography.KidsDisplayFontFamily
 import kotlin.math.cos
 import kotlin.math.sin
 
 /**
- * Full-screen horizontal background matching the reference screenshots:
- * a vibrant cyan-blue to purple-indigo vertical gradient covered in scattered,
- * semi-transparent tilted uppercase English alphabet letters (`A..Z`) that
- * gently float and sway across the canvas.
+ * Full-screen horizontal background:
+ * vibrant landscape background image covered in scattered, semi-transparent
+ * tilted uppercase English alphabet letters (`A..Z`) that gently float across the canvas.
  */
 @Composable
 fun AlphabetWatermarkBackground(
@@ -60,10 +62,16 @@ fun AlphabetWatermarkBackground(
     )
 
     Box(
-        modifier = modifier
-            .fillMaxSize()
-            .background(brush = AppColors.RoadmapBackgroundBrush)
+        modifier = modifier.fillMaxSize()
     ) {
+        // Fullscreen cartoon landscape background image
+        Image(
+            painter = painterResource(id = AppImages.RoadmapBackground),
+            contentDescription = null,
+            contentScale = ContentScale.Crop,
+            modifier = Modifier.fillMaxSize()
+        )
+
         Canvas(modifier = Modifier.fillMaxSize()) {
             val letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
             val cols = 11

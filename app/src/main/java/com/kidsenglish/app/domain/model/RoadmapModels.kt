@@ -71,7 +71,8 @@ data class RoadmapTopicCategory(
     val colorStyle: TopicColorStyle,
     val wordsLearnedProgress: Float,
     val targetSectionIndex: Int,
-    val tiltDegrees: Float
+    val tiltDegrees: Float,
+    val isLocked: Boolean = true
 )
 
 /**
@@ -85,7 +86,11 @@ data class RoadmapActivityCard(
     val isLocked: Boolean,
     val isCompleted: Boolean,
     val isLargeBoard: Boolean = false,
-    val tiltDegrees: Float = -1.2f
+    val tiltDegrees: Float = -1.2f,
+    val letterChar: Char? = null,
+    val phonicsWord: String? = null,
+    val phonicsEmoji: String? = null,
+    val customTitleText: String? = null
 )
 
 /**

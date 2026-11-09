@@ -643,73 +643,123 @@ private fun GiantAbcTracingBoardCard(
                     .alpha(0.18f)
             )
 
-            Canvas(modifier = Modifier.fillMaxSize()) {
-                val w = size.width
-                val h = size.height
-                val charBounceA = sin(waveAngleRad) * (h * 0.03f)
-                val charBounceB = cos(waveAngleRad) * (h * 0.03f)
-                val charBounceC = sin(waveAngleRad + 1.5f) * (h * 0.03f)
+            if (card.letterChar == 'A') {
+                // Level 1: Featured 3D Letter 'A' Wizard
+                Box(
+                    contentAlignment = Alignment.Center,
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(AppDimensions.SpaceXXS)
+                ) {
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Image(
+                            painter = painterResource(id = AppImages.LetterAWizard),
+                            contentDescription = null,
+                            contentScale = ContentScale.Fit,
+                            modifier = Modifier
+                                .fillMaxHeight(0.75f)
+                                .graphicsLayer {
+                                    translationY = sin(waveAngleRad * 1.5f) * 6f
+                                    rotationZ = cos(waveAngleRad) * 3f
+                                }
+                        )
+                        Text(
+                            text = "A - Apple 🍎",
+                            style = MaterialTheme.typography.titleMedium,
+                            color = AppColors.CardWhiteFrame
+                        )
+                    }
+                }
+            } else if (card.letterChar != null) {
+                // Levels 2..26 (Letters B..Z)
+                Canvas(modifier = Modifier.fillMaxSize()) {
+                    val w = size.width
+                    val h = size.height
+                    val charBounce = sin(waveAngleRad) * (h * 0.03f)
 
-                // Letter 'A' in sunny gold (bottom-left)
-                drawText(
-                    textMeasurer = textMeasurer,
-                    text = "A",
-                    topLeft = Offset(w * 0.08f, h * 0.42f + charBounceA),
-                    style = TextStyle(
-                        fontFamily = KidsDisplayFontFamily,
-                        fontWeight = FontWeight.Bold,
-                        fontSize = AppDimensions.TextSizeDisplayLarge,
-                        color = AppColors.SceneYellowAccent
+                    // Big Letter Display
+                    drawText(
+                        textMeasurer = textMeasurer,
+                        text = card.letterChar.toString(),
+                        topLeft = Offset(w * 0.12f, h * 0.18f + charBounce),
+                        style = TextStyle(
+                            fontFamily = KidsDisplayFontFamily,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = AppDimensions.TextSizeDisplayLarge * 1.2f,
+                            color = AppColors.SceneYellowAccent
+                        )
                     )
-                )
-                // Animated green tracing dot on 'A'
-                drawCircle(
-                    color = AppColors.SceneGreenAccent,
-                    radius = w * 0.038f,
-                    center = Offset(w * 0.16f, h * 0.62f + charBounceA)
-                )
 
-                // Letter 'B' in sky blue & white (top-center)
-                drawText(
-                    textMeasurer = textMeasurer,
-                    text = "B",
-                    topLeft = Offset(w * 0.42f, h * 0.12f + charBounceB),
-                    style = TextStyle(
-                        fontFamily = KidsDisplayFontFamily,
-                        fontWeight = FontWeight.Bold,
-                        fontSize = AppDimensions.TextSizeDisplayLarge,
-                        color = AppColors.MascotBlueGlow
-                    )
-                )
-                // Animated green tracing dot on 'B'
-                drawCircle(
-                    color = AppColors.SceneGreenAccent,
-                    radius = w * 0.038f,
-                    center = Offset(w * 0.44f, h * 0.20f + charBounceB)
-                )
+                    // Phonics Emoji
+                    if (card.phonicsEmoji != null) {
+                        drawText(
+                            textMeasurer = textMeasurer,
+                            text = card.phonicsEmoji,
+                            topLeft = Offset(w * 0.62f, h * 0.28f - charBounce),
+                            style = TextStyle(
+                                fontSize = AppDimensions.TextSizeDisplayLarge
+                            )
+                        )
+                    }
 
-                // Letter 'C' in coral pink (bottom-right)
-                drawText(
-                    textMeasurer = textMeasurer,
-                    text = "C",
-                    topLeft = Offset(w * 0.72f, h * 0.40f + charBounceC),
-                    style = TextStyle(
-                        fontFamily = KidsDisplayFontFamily,
-                        fontWeight = FontWeight.Bold,
-                        fontSize = AppDimensions.TextSizeDisplayLarge,
-                        color = AppColors.ScenePinkAccent
+                    // Green Tracing Dot
+                    drawCircle(
+                        color = AppColors.SceneGreenAccent,
+                        radius = w * 0.038f,
+                        center = Offset(w * 0.22f, h * 0.68f + charBounce)
                     )
+
+                    // Stars
+                    drawCircle(
+                        color = AppColors.SplashSparkleGold,
+                        radius = w * (0.018f + abs(sin(waveAngleRad)) * 0.01f),
+                        center = Offset(w * 0.82f, h * 0.18f)
+                    )
+                }
+
+                // Word Label
+                if (card.phonicsWord != null) {
+                    Text(
+                        text = "${card.letterChar} - ${card.phonicsWord}",
+                        style = MaterialTheme.typography.titleMedium,
+                        color = AppColors.CardWhiteFrame,
+                        modifier = Modifier
+                            .align(Alignment.BottomCenter)
+                            .padding(bottom = AppDimensions.SpaceXS)
+                    )
+                }
+            } else {
+                Canvas(modifier = Modifier.fillMaxSize()) {
+                    val w = size.width
+                    val h = size.height
+                    val charBounceA = sin(waveAngleRad) * (h * 0.03f)
+                    drawText(
+                        textMeasurer = textMeasurer,
+                        text = "ABC",
+                        topLeft = Offset(w * 0.15f, h * 0.32f + charBounceA),
+                        style = TextStyle(
+                            fontFamily = KidsDisplayFontFamily,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = AppDimensions.TextSizeDisplayLarge,
+                            color = AppColors.SceneYellowAccent
+                        )
+                    )
+                }
+            }
+
+            // Locked Overlay & Padlock
+            if (card.isLocked) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(AppColors.SceneLockedTint)
                 )
-                // Twinkling golden stars on chalkboard
-                drawCircle(
-                    color = AppColors.SplashSparkleGold,
-                    radius = w * (0.018f + abs(sin(waveAngleRad)) * 0.01f),
-                    center = Offset(w * 0.26f, h * 0.22f)
-                )
-                drawCircle(
-                    color = AppColors.SplashSparkleGold,
-                    radius = w * (0.018f + abs(cos(waveAngleRad)) * 0.01f),
-                    center = Offset(w * 0.82f, h * 0.20f)
+                GoldenPadlockBadge(
+                    wiggleAngle = sin(waveAngleRad) * 8f,
+                    modifier = Modifier
+                        .align(Alignment.TopEnd)
+                        .padding(AppDimensions.SpaceXXS)
+                        .size(AppDimensions.ActivityPadlockSize)
                 )
             }
         }
@@ -870,14 +920,35 @@ fun ActivitySceneIllustration(
                 .alpha(0.32f)
         )
 
-        // Foreground layer: Animated scene-specific illustration with the Magic Parrot character
-        Canvas(modifier = Modifier.fillMaxSize()) {
-            val w = size.width
-            val h = size.height
-            val bobOffset = sin(waveAngleRad) * (h * 0.04f)
-            val altBobOffset = cos(waveAngleRad) * (h * 0.04f)
+        // For Lesson 1 (ICE_CREAM_COLORING): Display animated 3D Letter 'A' Wizard image
+        if (sceneType == ActivitySceneType.ICE_CREAM_COLORING) {
+            Box(
+                contentAlignment = Alignment.Center,
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(AppDimensions.SpaceXXS)
+            ) {
+                Image(
+                    painter = painterResource(id = AppImages.LetterAWizard),
+                    contentDescription = null,
+                    contentScale = ContentScale.Fit,
+                    modifier = Modifier
+                        .fillMaxHeight(0.90f)
+                        .graphicsLayer {
+                            translationY = sin(waveAngleRad * 1.5f) * 6f
+                            rotationZ = cos(waveAngleRad) * 3f
+                        }
+                )
+            }
+        } else {
+            // Foreground layer: Animated scene-specific illustration
+            Canvas(modifier = Modifier.fillMaxSize()) {
+                val w = size.width
+                val h = size.height
+                val bobOffset = sin(waveAngleRad) * (h * 0.04f)
+                val altBobOffset = cos(waveAngleRad) * (h * 0.04f)
 
-            when (sceneType) {
+                when (sceneType) {
                 ActivitySceneType.ICE_CREAM_COLORING -> {
                     drawRect(color = AppColors.SceneIceCreamBg.copy(alpha = 0.82f))
                     // Waffle cone
@@ -1207,14 +1278,15 @@ fun ActivitySceneIllustration(
                 drawRect(color = AppColors.SceneLockedTint)
             }
         }
+        }
     }
 }
 
 /**
- * Animated Golden 3D Padlock Badge in the top-right corner of locked Activity Cards (Screenshot 4).
+ * Animated Golden 3D Padlock Badge in the top-right corner of locked Activity & Topic Cards.
  */
 @Composable
-private fun GoldenPadlockBadge(
+fun GoldenPadlockBadge(
     wiggleAngle: Float = 0f,
     modifier: Modifier = Modifier
 ) {

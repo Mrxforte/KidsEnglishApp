@@ -18,6 +18,12 @@ object AppImages {
     // Splash Screen: Brand book-and-star logo emblem
     @DrawableRes val BrandEmblem: Int = R.drawable.ic_app_logo
 
+    // Roadmap Screen: Main cartoon landscape background illustration with volcano, lake, path and palm trees
+    @DrawableRes val RoadmapBackground: Int = R.drawable.img_roadmap_bg
+
+    // Roadmap Screen: Animated 3D Letter 'A' with purple wizard hat illustration for the 1st unlocked lesson
+    @DrawableRes val LetterAWizard: Int = R.drawable.img_letter_a_wizard
+
     // Roadmap Theme Pictures: Multi-layered vector scene illustrations for topic & activity cards
     @DrawableRes val ThemeAbc: Int = R.drawable.img_theme_abc
     @DrawableRes val ThemeAnimals: Int = R.drawable.img_theme_animals

@@ -255,6 +255,28 @@ private fun TiltedTopicCategoryCard(
                     .padding(AppDimensions.CardInnerPadding)
             ) {
                 when {
+                    category.id == "topic_1" || (category.iconType == TopicIconType.ABC_LETTERS && category.customTitle == null) -> {
+                        // Unlocked Topic 1: Featured 3D Animated Letter 'A' Wizard
+                        Image(
+                            painter = painterResource(id = AppImages.LetterAWizard),
+                            contentDescription = displayTitle,
+                            modifier = Modifier
+                                .size(AppDimensions.TopicGridIconSize * 1.35f)
+                                .scale(iconPulseScale)
+                                .graphicsLayer {
+                                    translationY = sin(waveAngleRad * 1.5f + cardPhase) * 6f
+                                    rotationZ = sin(waveAngleRad) * 4f
+                                }
+                        )
+                        Text(
+                            text = displayTitle,
+                            style = MaterialTheme.typography.titleMedium,
+                            color = AppColors.CardWhiteFrame,
+                            textAlign = TextAlign.Center,
+                            maxLines = 1
+                        )
+                    }
+
                     category.customTitle != null -> {
                         // Topics 19..200: Animated theme icon badge + custom topic title
                         Row(
@@ -290,8 +312,7 @@ private fun TiltedTopicCategoryCard(
                         }
                     }
 
-                    category.iconType == TopicIconType.ABC_LETTERS ||
-                        category.iconType == TopicIconType.NUMBERS_123 -> {
+                    category.iconType == TopicIconType.NUMBERS_123 -> {
                         Spacer(modifier = Modifier.height(AppDimensions.SpaceXXS))
                         Text(
                             text = displayTitle,
@@ -342,6 +363,22 @@ private fun TiltedTopicCategoryCard(
                 } else {
                     Spacer(modifier = Modifier.height(AppDimensions.TopicGridProgressHeight))
                 }
+            }
+
+            // Layer 4: Locked overlay & Golden Padlock Badge if topic is locked
+            if (category.isLocked) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(AppColors.SceneLockedTint)
+                )
+                GoldenPadlockBadge(
+                    wiggleAngle = sin(waveAngleRad + cardPhase) * 8f,
+                    modifier = Modifier
+                        .align(Alignment.TopEnd)
+                        .padding(AppDimensions.SpaceXXS)
+                        .size(AppDimensions.ActivityPadlockSize)
+                )
             }
         }
     }
